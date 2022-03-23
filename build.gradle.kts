@@ -6,6 +6,14 @@ plugins {
     id("com.android.dynamic-feature") version "7.1.2" apply false
 }
 
+buildscript {
+    extra["kotlin_version"] = Versions.kotlin
+
+    dependencies {
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${JetPackVersion.hilt}")
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

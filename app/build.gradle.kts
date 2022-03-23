@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -42,11 +44,14 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
     implementation(project(":base"))
+
+    setDependencies(Libs.Basic)
+    setDependencies(Libs.Network)
+    setDependencies(Libs.AndroidX)
+    setDependencies(Libs.JetPack)
 }
