@@ -66,4 +66,5 @@ dependencies {
     setDependencies(Libs.Network)
     setDependencies(Libs.AndroidX)
     setDependencies(Libs.JetPack)
+    setDependencies(Libs.Kakao)
 }

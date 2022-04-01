@@ -10,7 +10,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_meew_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Meew">
+        android:theme="@style/Theme.Meew"
+        android:name=".MeewApplication">
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
