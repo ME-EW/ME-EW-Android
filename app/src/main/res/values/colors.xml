@@ -14,8 +14,10 @@
     <color name="orange_500">#FEA800</color>
     <color name="pink_500">#FC4FF5</color>
 
-    <color name="grey_800">#303030</color>
-    <color name="grey_700">#5C5C5C</color>
-    <color name="grey_500">#989898</color>
-    <color name="grey_400">#D4D4D4</color>
+    <color name="grey_700">#222222</color>
+    <color name="grey_600">#373737</color>
+    <color name="grey_500">#494949</color>
+    <color name="grey_400">#989898</color>
+    <color name="grey_300">#494949</color>
+    <color name="grey_200">#E8E8E8</color>
 </resources>
