@@ -3,6 +3,8 @@ object Versions {
     const val materialVersion = "1.4.0"
 
     const val kotlin = "1.6.10"
+
+    const val kakao = "2.9.0"
 }
 
 object NetworkVersion {

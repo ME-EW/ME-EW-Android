@@ -108,6 +108,15 @@ interface Libs {
 
     }
 
+    object Kakao : Libs {
+        private const val user = "com.kakao.sdk:v2-user:${Versions.kakao}"
+        override fun getDependencies(): List<DependencyType> {
+            return listOf(
+                DependencyType.Implementation(user)
+            )
+        }
+    }
+
 }
 
 fun DependencyHandler.setDependencies(libs: Libs) {
