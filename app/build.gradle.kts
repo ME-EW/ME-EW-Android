@@ -28,6 +28,16 @@ android {
             )
         }
     }
+
+    signingConfigs {
+        create("release") {
+            storeFile = project.properties["SIGNED_STORE_FILE"]?.let { file(it) }
+            storePassword = project.properties["SIGNED_STORE_PASSWORD"].toString()
+            keyAlias = project.properties["SIGNED_KEY_ALIAS"].toString()
+            keyPassword = project.properties["SIGNED_KEY_PASSWORD"].toString()
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
