@@ -2,7 +2,7 @@ object Versions {
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.4.0"
 
-    const val kotlin = "1.6.10"
+    const val kotlin = "1.6.20"
 
     const val kakao = "2.9.0"
 }

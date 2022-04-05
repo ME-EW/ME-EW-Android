@@ -10,8 +10,5 @@ import com.kangmin.meew.databinding.ActivitySplashBinding
 class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_splash) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.run {
-            lifecycleOwner = this@SplashActivity
-        }
     }
 }

@@ -20,6 +20,9 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val resId: I
         } catch (ignore: IllegalStateException) {}
 
         binding = DataBindingUtil.setContentView(this, resId)
+        binding.run {
+            lifecycleOwner = this@BaseActivity
+        }
         setObserve()
         setClickEvent()
     }
