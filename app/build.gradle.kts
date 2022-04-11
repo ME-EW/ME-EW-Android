@@ -61,6 +61,7 @@ dependencies {
 
     implementation(project(":base"))
     implementation(project(":data"))
+    implementation(project(":domain"))
 
     setDependencies(Libs.Basic)
     setDependencies(Libs.Network)

@@ -18,3 +18,4 @@ rootProject.name = "Meew"
 include ':app'
 include ':base'
 include ':data'
+include ':domain'
