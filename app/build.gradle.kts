@@ -60,7 +60,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
     implementation(project(":base"))
-    implementation(project(":data"))
     implementation(project(":domain"))
 
     setDependencies(Libs.Basic)
