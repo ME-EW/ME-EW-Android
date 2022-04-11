@@ -117,6 +117,20 @@ interface Libs {
         }
     }
 
+    object KTX : Libs {
+
+        private const val activity = "androidx.activity:activity-ktx:${KTXVersion.activity}"
+        private const val fragment = "androidx.fragment:fragment-ktx:${KTXVersion.fragment}"
+        private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${KTXVersion.viewModel}"
+
+        override fun getDependencies(): List<DependencyType> {
+            return listOf(
+                DependencyType.Implementation(activity),
+                DependencyType.Implementation(fragment),
+                DependencyType.Implementation(viewModel)
+            )
+        }
+    }
 }
 
 fun DependencyHandler.setDependencies(libs: Libs) {

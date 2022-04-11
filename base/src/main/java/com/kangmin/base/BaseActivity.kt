@@ -3,11 +3,13 @@ package com.kangmin.base
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.annotation.LayoutRes
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModel
 
-abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val resId: Int) :
+abstract class BaseActivity <T : ViewDataBinding>(@LayoutRes private val resId: Int) :
     AppCompatActivity() {
 
     protected lateinit var binding: T

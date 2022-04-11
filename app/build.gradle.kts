@@ -61,10 +61,12 @@ dependencies {
 
     implementation(project(":base"))
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     setDependencies(Libs.Basic)
     setDependencies(Libs.Network)
     setDependencies(Libs.AndroidX)
     setDependencies(Libs.JetPack)
     setDependencies(Libs.Kakao)
+    setDependencies(Libs.KTX)
 }

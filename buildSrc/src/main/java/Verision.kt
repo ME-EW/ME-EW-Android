@@ -23,6 +23,12 @@ object JetPackVersion {
     const val hilt = "2.38.1"
 }
 
+object KTXVersion {
+    const val viewModel = "2.5.0-alpha06"
+    const val activity = "1.4.0"
+    const val fragment = "1.4.1"
+}
+
 object TestDependenciesVersion {
     const val androidXJunitVersion = "1.1.3"
     const val junitVersion = "4.13.2"
