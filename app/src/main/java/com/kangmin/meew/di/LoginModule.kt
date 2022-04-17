@@ -1,23 +1,23 @@
 package com.kangmin.meew.di
 
+import android.content.Context
 import com.example.data.helper.KakaoLoginHelper
-import com.example.domain.repository.KakaoRepository
-import com.example.domain.repository.LocalRepository
-import com.example.domain.usecase.LoginUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object UseCaseModule {
+object LoginModule {
 
     @Singleton
     @Provides
-    fun provideLoginUseCase(
-        @Named("SharedPref") sharedPrefRepo: LocalRepository
-    ): LoginUseCase = LoginUseCase(sharedPrefRepo)
+    @Named("KakaoLogin")
+    fun provideKakaoLoginHelper(
+        @ApplicationContext context: Context
+    ): KakaoLoginHelper = KakaoLoginHelper(context)
 }
