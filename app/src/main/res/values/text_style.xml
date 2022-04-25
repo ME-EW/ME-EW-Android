@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base_Font">
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="Title1_Bold_24" parent="Base_Font">
+    <style name="Title1_Bold_24" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_bold</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">24dp</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
 
-    <style name="Title2_Bold_20" parent="Base_Font">
+    <style name="Title2_Bold_20" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_bold</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
 
-    <style name="Title3_Bold_18" parent="Base_Font">
+    <style name="Title3_Bold_18" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_bold</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_bold</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">18dp</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
 
-    <style name="Title4_Medium_18" parent="Base_Font">
+    <style name="Title4_Medium_18" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">18dp</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
 
-    <style name="Body1_Medium_16" parent="Base_Font">
+    <style name="Body1_Medium_16" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:lineSpacingExtra">8sp</item>
     </style>
 
-    <style name="Body2_Medium_14" parent="Base_Font">
+    <style name="Body2_Medium_14" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
 
-    <style name="Body3_Regular_14" parent="Base_Font">
+    <style name="Body3_Regular_14" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_regular</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_regular</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
 
-    <style name="Body4_Medium_12" parent="Base_Font">
+    <style name="Body4_Medium_12" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">12dp</item>
         <item name="android:lineSpacingExtra">6sp</item>
     </style>
 
-    <style name="Body5_Medium_10" parent="Base_Font">
+    <style name="Body5_Medium_10" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">10dp</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
 
-    <style name="Body6_Medium_8" parent="Base_Font">
+    <style name="Body6_Medium_8" parent="Base_Font" tools:ignore="SpUsage">
         <item name="fontFamily">@font/spoqa_han_sans_neo_medium</item>
         <item name="android:fontFamily">@font/spoqa_han_sans_neo_medium</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">8dp</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
     
