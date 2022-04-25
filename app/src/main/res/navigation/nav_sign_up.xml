@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_sign_up"
+    app:startDestination="@id/characterSelectFragment">
+
+    <fragment
+        android:id="@+id/characterSelectFragment"
+        android:name="com.kangmin.meew.view.signup.CharacterSelectFragment"
+        android:label="CharacterSelectFragment"
+        tools:layout="@layout/fragment_character_select"/>
+</navigation>

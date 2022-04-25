@@ -2,4 +2,6 @@
     <string name="app_name">ME:EW</string>
     <string name="title_dfm">dfm</string>
     <string name="KAKAO_NATIVE_APP_KEY">e8b810e71ca9869160f85eb6d33a8c5d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

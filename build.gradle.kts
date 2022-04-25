@@ -11,6 +11,7 @@ buildscript {
 
     dependencies {
         classpath("com.google.dagger:hilt-android-gradle-plugin:${JetPackVersion.hilt}")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${JetPackVersion.navigation}")
     }
 }
 
