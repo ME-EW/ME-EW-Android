@@ -23,6 +23,7 @@ object AndroidXVersion {
 
 object JetPackVersion {
     const val hilt = "2.38.1"
+    const val navigation = "2.4.2"
 }
 
 object KTXVersion {

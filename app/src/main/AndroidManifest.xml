@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meew">
         <activity
-            android:name=".view.login.LoginActivity"
-            android:exported="false" />
+            android:name=".view.signup.SignUpActivity"
+            android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+            android:name=".view.login.LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".view.splash.SplashActivity"
             android:exported="true">
@@ -27,16 +27,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <data android:host="oauth"
-                    android:scheme="kakaoe8b810e71ca9869160f85eb6d33a8c5d"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakaoe8b810e71ca9869160f85eb6d33a8c5d" />
             </intent-filter>
         </activity>
     </application>

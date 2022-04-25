@@ -98,11 +98,17 @@ interface Libs {
     object JetPack : Libs {
         private const val hilt = "com.google.dagger:hilt-android:${JetPackVersion.hilt}"
         private const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${JetPackVersion.hilt}"
+        private const val navigationKtx = "androidx.navigation:navigation-fragment-ktx:${JetPackVersion.navigation}"
+        private const val navigationUiKtx ="androidx.navigation:navigation-ui-ktx:${JetPackVersion.navigation}"
+        private const val navigationDynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:${JetPackVersion.navigation}"
 
         override fun getDependencies(): List<DependencyType> {
             return listOf(
                 DependencyType.Implementation(hilt),
-                DependencyType.Kapt(hiltCompiler)
+                DependencyType.Kapt(hiltCompiler),
+                DependencyType.Implementation(navigationKtx),
+                DependencyType.Implementation(navigationUiKtx),
+                DependencyType.Implementation(navigationDynamicFeatures)
             )
         }
 
