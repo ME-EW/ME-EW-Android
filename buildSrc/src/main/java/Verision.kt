@@ -1,4 +1,6 @@
 object Versions {
+    const val gradle = "7.1.3"
+
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.4.0"
 
