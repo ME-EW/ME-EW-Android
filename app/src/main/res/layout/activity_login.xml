@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.content.Context" />
+        <variable
+            name="viewModel"
+            type="com.kangmin.meew.view.login.LoginViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,6 +32,7 @@
             android:background="@drawable/shape_kakao_btn"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="@{()->viewModel.loginKakao(context)}"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView

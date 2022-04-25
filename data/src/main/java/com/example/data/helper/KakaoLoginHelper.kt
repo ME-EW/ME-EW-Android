@@ -8,6 +8,7 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -15,18 +16,20 @@ import javax.inject.Singleton
 
 @Singleton
 class KakaoLoginHelper @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val applicationContext: Context
 ) {
     private val TAG = "KAKAO"
 
     init {
-        KakaoSdk.init(context, "e8b810e71ca9869160f85eb6d33a8c5d")
+        KakaoSdk.init(applicationContext, "e8b810e71ca9869160f85eb6d33a8c5d")
     }
 
     fun loginKakao(
+        context: Context,
         loginListener: LoginListener,
         callbackWithKakaoAccount: (OAuthToken?, Throwable?) -> Unit
     ) {
+
         if (UserApiClient.instance.isKakaoTalkLoginAvailable(context)) {
             UserApiClient.instance.loginWithKakaoTalk(context) { token, error ->
                 if (error != null) {
@@ -38,10 +41,7 @@ class KakaoLoginHelper @Inject constructor(
                         return@loginWithKakaoTalk
                     }
 
-                    UserApiClient.instance.loginWithKakaoAccount(
-                        context,
-                        callback = callbackWithKakaoAccount
-                    )
+                    loginListener.onFailed(error)
 
                 } else if (token != null) {
                     loginListener.onSuccess()
