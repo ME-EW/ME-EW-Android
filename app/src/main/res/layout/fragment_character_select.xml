@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.signup.CharacterSelectFragment">
+        tools:context=".view.signup.CharacterSelectFragment"
+        tools:ignore="HardCodedText">
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/Title2_Bold_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:text="자신과 맞는\n캐릭터를 선택해주세요"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/viewpager_character"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            tools:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/dot_indicator"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_title"/>
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dot_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:dotsColor="@color/grey_500"
+            app:selectedDotColor="@color/white"
+            app:progressMode="true"
+            app:dotsCornerRadius="10dp"
+            app:dotsSize="5dp"
+            app:dotsSpacing="8dp"
+            android:layout_marginBottom="170dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
