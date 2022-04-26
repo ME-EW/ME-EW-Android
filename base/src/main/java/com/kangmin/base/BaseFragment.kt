@@ -13,7 +13,8 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
 
     protected lateinit var binding: T
 
-    abstract fun onCreateViewFromBase()
+    abstract fun setOnCreateView()
+    abstract fun setOnViewCreated()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,16 +22,17 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, resId, container, false)
-        onCreateViewFromBase()
+        setOnCreateView()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
-
         setClickEvent()
         setObserve()
+
+        setOnViewCreated()
     }
 
     open fun setObserve() {}
