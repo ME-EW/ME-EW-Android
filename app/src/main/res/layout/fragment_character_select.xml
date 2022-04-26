@@ -29,6 +29,8 @@
             tools:background="@color/white"
             app:layout_constraintBottom_toTopOf="@id/dot_indicator"
             android:layout_marginBottom="24dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
             app:layout_constraintTop_toBottomOf="@id/txt_title"/>
 
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
@@ -40,7 +42,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:dotsColor="@color/grey_500"
             app:selectedDotColor="@color/white"
-            app:progressMode="true"
             app:dotsCornerRadius="10dp"
             app:dotsSize="5dp"
             app:dotsSpacing="8dp"

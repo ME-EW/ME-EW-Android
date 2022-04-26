@@ -2,6 +2,7 @@ package com.kangmin.meew.di
 
 import com.example.domain.repository.LocalRepository
 import com.example.domain.usecase.LoginUseCase
+import com.example.domain.usecase.SignUpUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,4 +19,8 @@ object UseCaseModule {
     fun provideLoginUseCase(
         @Named("SharedPref") sharedPrefRepo: LocalRepository
     ): LoginUseCase = LoginUseCase(sharedPrefRepo)
+
+    @Singleton
+    @Provides
+    fun provideSignUpUseCase(): SignUpUseCase = SignUpUseCase()
 }
