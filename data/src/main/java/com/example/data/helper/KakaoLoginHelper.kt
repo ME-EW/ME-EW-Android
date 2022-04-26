@@ -2,13 +2,11 @@ package com.example.data.helper
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import com.example.domain.listener.LoginListener
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

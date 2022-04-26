@@ -1,7 +1,5 @@
 package com.kangmin.meew.di
 
-import com.example.data.helper.KakaoLoginHelper
-import com.example.domain.repository.KakaoRepository
 import com.example.domain.repository.LocalRepository
 import com.example.domain.usecase.LoginUseCase
 import dagger.Module

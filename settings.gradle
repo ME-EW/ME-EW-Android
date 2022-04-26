@@ -17,5 +17,5 @@ dependencyResolutionManagement {
 rootProject.name = "Meew"
 include ':app'
 include ':base'
-include ':domain'
 include ':data'
+include ':domain'

@@ -75,3 +75,7 @@ dependencies {
     setDependencies(Libs.KTX)
     setDependencies(Libs.UI)
 }
+
+kapt {
+    correctErrorTypes = true
+}

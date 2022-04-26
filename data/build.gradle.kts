@@ -46,6 +46,5 @@ dependencies {
     setDependencies(Libs.JetPack)
     setDependencies(Libs.Network)
     setDependencies(Libs.Kakao)
-
     implementation(project(":domain"))
 }

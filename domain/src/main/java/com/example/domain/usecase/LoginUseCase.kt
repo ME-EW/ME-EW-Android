@@ -5,7 +5,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LoginUseCase @Inject constructor(
+class LoginUseCase @Inject constructor (
     private val sharedPref: LocalRepository
 ) {
     fun getTest(): String = sharedPref.test ?: ""
