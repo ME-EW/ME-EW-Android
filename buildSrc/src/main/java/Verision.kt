@@ -7,6 +7,8 @@ object Versions {
     const val kotlin = "1.6.20"
 
     const val kakao = "2.9.0"
+
+    const val dotIndicator="4.2"
 }
 
 object NetworkVersion {

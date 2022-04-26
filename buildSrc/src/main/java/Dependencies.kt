@@ -137,6 +137,15 @@ interface Libs {
             )
         }
     }
+
+    object UI : Libs {
+        private const val dotIndicator = "com.tbuonomo:dotsindicator:${Versions.dotIndicator}"
+        override fun getDependencies(): List<DependencyType> {
+            return listOf(
+                DependencyType.Implementation(dotIndicator)
+            )
+        }
+    }
 }
 
 fun DependencyHandler.setDependencies(libs: Libs) {

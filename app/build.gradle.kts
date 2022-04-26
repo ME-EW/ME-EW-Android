@@ -73,4 +73,5 @@ dependencies {
     setDependencies(Libs.JetPack)
     setDependencies(Libs.Kakao)
     setDependencies(Libs.KTX)
+    setDependencies(Libs.UI)
 }
