@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
+
     <data>
+
         <import type="android.content.Context" />
+
         <variable
             name="viewModel"
             type="com.kangmin.meew.view.login.LoginViewModel" />
@@ -25,28 +28,29 @@
             tools:background="@color/grey_400" />
 
         <TextView
+            android:id="@+id/txt_title"
+            style="@style/Title1_Bold_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_title"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/montserrat_bold"
             android:text="ME:EW"
-            style="@style/Title1_Bold_24"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/view_on_boarding"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="40dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_on_boarding" />
 
         <TextView
+            android:id="@+id/txt_body"
+            style="@style/Body3_Regular_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_body"
+            android:layout_marginTop="8dp"
             android:text="또 다른 나로 살아보세요"
             android:textColor="@color/white"
-            style="@style/Body4_Medium_12"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/txt_title"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_login_kakao"
