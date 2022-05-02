@@ -19,11 +19,9 @@ class SignUpViewModel @Inject constructor(
     val characters: LiveData<List<CharacterInfo>> = _characters.map { it }
 
     /** 닉네임 */
-    val nickName = MutableLiveData<String>()
+    val nickName = MutableLiveData("")
     val nickNameLengthText: LiveData<String> = nickName.map {
-        return@map if (it.isNullOrEmpty())
-            "0/10"
-        else "${it.length}/10"
+        return@map "${it.length}/10"
     }
 
     init {
