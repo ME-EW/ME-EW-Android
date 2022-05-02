@@ -21,4 +21,11 @@
         <item name="android:textColor">@color/grey_200</item>
         <item name="android:textColorHint">@color/grey_400</item>
     </style>
+
+    <style name="Meew_Button" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@drawable/drawable_button_style_8</item>
+        <item name="android:textColor">@color/state_enable_color</item>
+        <item name="android:textAppearance">@style/Title3_Bold_18</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>
