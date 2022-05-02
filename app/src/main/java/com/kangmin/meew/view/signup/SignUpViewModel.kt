@@ -1,6 +1,7 @@
 package com.kangmin.meew.view.signup
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
 import com.example.domain.model.CharacterInfo
 import com.example.domain.usecase.SignUpUseCase
@@ -16,6 +17,14 @@ class SignUpViewModel @Inject constructor(
 
     private val _characters = ListLiveData<CharacterInfo>()
     val characters: LiveData<List<CharacterInfo>> = _characters.map { it }
+
+    /** 닉네임 */
+    val nickName = MutableLiveData<String>()
+    val nickNameLengthText: LiveData<String> = nickName.map {
+        return@map if (it.isNullOrEmpty())
+            "0/10"
+        else "${it.length}/10"
+    }
 
     init {
         _characters.value = signUpUseCase.getCharacters().toMutableList()

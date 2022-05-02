@@ -2,9 +2,9 @@ object Versions {
     const val gradle = "7.1.3"
 
     const val glideVersion = "4.13.0"
-    const val materialVersion = "1.4.0"
+    const val materialVersion = "1.5.0"
 
-    const val kotlin = "1.6.20"
+    const val kotlin = "1.6.21"
 
     const val kakao = "2.9.0"
 
@@ -34,6 +34,7 @@ object KTXVersion {
     const val lifeCycle = "2.4.1"
     const val activity = "1.4.0"
     const val fragment = "1.4.1"
+    const val collection = "1.2.0"
 }
 
 object TestDependenciesVersion {

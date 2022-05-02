@@ -37,4 +37,5 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
 
     open fun setObserve() {}
     open fun setClickEvent() {}
+
 }

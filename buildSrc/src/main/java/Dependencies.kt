@@ -84,13 +84,15 @@ interface Libs {
         private const val constraintlayout =
             "androidx.constraintlayout:constraintlayout:${AndroidXVersion.constraintLayoutVersion}"
         private const val coreKtx = "androidx.core:core-ktx:${AndroidXVersion.coreKtx}"
+        private const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
         private const val appCompat = "androidx.appcompat:appcompat:${AndroidXVersion.appCompat}"
 
         override fun getDependencies(): List<DependencyType> {
             return listOf(
                 DependencyType.Implementation(appCompat),
                 DependencyType.Implementation(constraintlayout),
-                DependencyType.Implementation(coreKtx)
+                DependencyType.Implementation(coreKtx),
+                DependencyType.Implementation(kotlinStdlib)
             )
         }
     }
@@ -129,13 +131,15 @@ interface Libs {
         private const val fragment = "androidx.fragment:fragment-ktx:${KTXVersion.fragment}"
         private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${KTXVersion.lifeCycle}"
         private const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${KTXVersion.lifeCycle}"
+        private const val collection = "androidx.collection:collection-ktx:${KTXVersion.collection}"
 
         override fun getDependencies(): List<DependencyType> {
             return listOf(
                 DependencyType.Implementation(activity),
                 DependencyType.Implementation(fragment),
                 DependencyType.Implementation(viewModel),
-                DependencyType.Implementation(liveData)
+                DependencyType.Implementation(liveData),
+                DependencyType.Implementation(collection)
             )
         }
     }
