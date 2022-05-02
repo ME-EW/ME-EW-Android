@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="fragment"
+            type="com.kangmin.meew.view.signup.CharacterSelectFragment" />
+        <variable
+            name="viewModel"
+            type="com.kangmin.meew.view.signup.SignUpViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -21,31 +30,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_character"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/viewpager_character"
-            android:orientation="horizontal"
             android:layout_marginTop="30dp"
-            tools:background="@color/white"
-            app:layout_constraintBottom_toTopOf="@id/dot_indicator"
             android:layout_marginBottom="24dp"
-            android:clipToPadding="false"
             android:clipChildren="false"
-            app:layout_constraintTop_toBottomOf="@id/txt_title"/>
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/dot_indicator"
+            app:layout_constraintTop_toBottomOf="@id/txt_title"
+            tools:background="@color/white" />
 
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
             android:id="@+id/dot_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="170dp"
             app:dotsColor="@color/grey_500"
-            app:selectedDotColor="@color/white"
             app:dotsCornerRadius="10dp"
             app:dotsSize="5dp"
             app:dotsSpacing="8dp"
-            android:layout_marginBottom="170dp"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:selectedDotColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/btn_next"
+            style="@style/Title2_Bold_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="Next"
+            android:onClick="@{()->fragment.moveNickNameStep()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

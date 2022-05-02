@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.kangmin.meew.view.signup.NickNameFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.kangmin.meew.view.signup.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.signup.NickNameFragment">
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/Title1_Bold_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="98dp"
+            android:text="닉네임을 입력하세요"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_nick_name"
+            style="@style/Body1_Medium_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:hint="ex. 딱새우회"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="10"
+            android:paddingTop="0dp"
+            android:paddingBottom="16dp"
+            android:theme="@style/Meew_Edit_Text"
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <TextView
+            android:id="@+id/txt_nick_name_length"
+            style="@style/Body2_Medium_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_500"
+            app:layout_constraintEnd_toEndOf="@+id/edt_nick_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nick_name"
+            tools:text="0/10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

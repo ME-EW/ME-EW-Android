@@ -9,5 +9,14 @@
         android:id="@+id/characterSelectFragment"
         android:name="com.kangmin.meew.view.signup.CharacterSelectFragment"
         android:label="CharacterSelectFragment"
-        tools:layout="@layout/fragment_character_select"/>
+        tools:layout="@layout/fragment_character_select">
+        <action
+            android:id="@+id/action_characterSelectFragment_to_nickNameFragment"
+            app:destination="@id/nickNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nickNameFragment"
+        android:name="com.kangmin.meew.view.signup.NickNameFragment"
+        android:label="NickNameFragment"
+        tools:layout="@layout/fragment_nick_name"/>
 </navigation>

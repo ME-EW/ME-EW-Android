@@ -1,6 +1,7 @@
 package com.kangmin.meew.view.signup
 
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.kangmin.base.BaseFragment
 import com.kangmin.meew.R
@@ -21,6 +22,10 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
     }
 
     override fun setOnViewCreated() {
+        binding.run {
+            fragment = this@CharacterSelectFragment
+            viewModel = viewModel
+        }
     }
 
     override fun setObserve() {
@@ -49,5 +54,9 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
         }
         binding.dotIndicator.setViewPager2(binding.viewpagerCharacter)
 
+    }
+
+    fun moveNickNameStep() {
+        findNavController().navigate(R.id.action_characterSelectFragment_to_nickNameFragment)
     }
 }

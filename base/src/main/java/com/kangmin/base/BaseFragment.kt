@@ -29,10 +29,10 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val resId: I
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
+        setOnViewCreated()
         setClickEvent()
         setObserve()
 
-        setOnViewCreated()
     }
 
     open fun setObserve() {}
