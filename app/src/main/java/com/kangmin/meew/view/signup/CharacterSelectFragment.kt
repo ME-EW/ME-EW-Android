@@ -6,6 +6,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.kangmin.base.BaseFragment
 import com.kangmin.meew.R
 import com.kangmin.meew.databinding.FragmentCharacterSelectBinding
+import com.kangmin.meew.util.Dlog
 import com.kangmin.meew.util.dp
 import com.kangmin.meew.view.signup.adapter.CharacterViewPagerAdapter
 
@@ -35,6 +36,9 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
             characters.observe(viewLifecycleOwner) {
                 characterInfoAdapter.characterInfoDiffUtil.set(it.toMutableList())
             }
+            selectedCharacterLiveData.observe(viewLifecycleOwner) {
+                binding.btnNext.isEnabled = (it != null)
+            }
         }
     }
 
@@ -43,6 +47,10 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
     }
 
     private fun initCharacterCard() {
+
+        characterInfoAdapter.setItemListener { character ->
+            viewModel.selectedCharacter = character
+        }
 
         binding.viewpagerCharacter.run {
             offscreenPageLimit = 2

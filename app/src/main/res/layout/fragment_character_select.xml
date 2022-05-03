@@ -66,7 +66,6 @@
             android:text="이 캐릭터로 할래요"
             android:paddingVertical="16dp"
             android:layout_marginHorizontal="20dp"
-            android:enabled="@{viewModel.isSelectCharacter}"
             android:onClick="@{()->fragment.moveNickNameStep()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

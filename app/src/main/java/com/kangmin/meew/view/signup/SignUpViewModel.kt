@@ -20,9 +20,14 @@ class SignUpViewModel @Inject constructor(
 
     /** 선택한 캐릭터 정보 */
     private val _selectedCharacter = MutableLiveData<CharacterInfo>()
-    val isSelectCharacter: LiveData<Boolean> = _selectedCharacter.map {
-        return@map it != null
-    }
+    val selectedCharacterLiveData: LiveData<CharacterInfo> = _selectedCharacter
+    var selectedCharacter: CharacterInfo? = null
+        set(value) {
+            value?.let {
+                _selectedCharacter.value = it
+            }
+            field = value
+        }
 
     /** 닉네임 */
     val nickName = MutableLiveData("")
@@ -33,4 +38,5 @@ class SignUpViewModel @Inject constructor(
     init {
         _characters.value = signUpUseCase.getCharacters().toMutableList()
     }
+
 }

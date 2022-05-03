@@ -12,12 +12,12 @@ class CharacterViewPagerAdapter :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var characterInfoDiffUtil = CharacterDiffUtil(this)
-    var itemListener: SelectCharacter? = null
+    private var itemListener: ((CharacterInfo) -> Unit)? = null
 
     private var checkedPosition = -1
 
-    interface SelectCharacter {
-        fun onSelectCharacter(data: CharacterInfo)
+    fun setItemListener(listener: (character: CharacterInfo) -> Unit) {
+        itemListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -70,7 +70,7 @@ class CharacterViewPagerAdapter :
 
         fun selectCharacter(data: CharacterInfo) {
             if (checkedPosition != adapterPosition) {
-                itemListener?.onSelectCharacter(data) // 선택한 캐릭터 정보 반환
+                itemListener?.let { it(data) } // 선택한 캐릭터 정보 반환
                 if (checkedPosition != -1) // 현재 선택되어져 있는 캐릭터가 있을 경우
                     notifyItemChanged(checkedPosition, false) // 선택되어져 있는 캐릭터 선택 해제
                 checkedPosition = adapterPosition
