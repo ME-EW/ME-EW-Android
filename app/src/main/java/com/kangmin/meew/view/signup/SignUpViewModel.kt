@@ -18,6 +18,12 @@ class SignUpViewModel @Inject constructor(
     private val _characters = ListLiveData<CharacterInfo>()
     val characters: LiveData<List<CharacterInfo>> = _characters.map { it }
 
+    /** 선택한 캐릭터 정보 */
+    private val _selectedCharacter = MutableLiveData<CharacterInfo>()
+    val isSelectCharacter: LiveData<Boolean> = _selectedCharacter.map {
+        return@map it != null
+    }
+
     /** 닉네임 */
     val nickName = MutableLiveData("")
     val nickNameLengthText: LiveData<String> = nickName.map {

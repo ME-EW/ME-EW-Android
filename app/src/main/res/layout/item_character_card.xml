@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="item"
+            type="com.example.domain.model.CharacterInfo" />
+        <variable
+            name="holder"
+            type="com.kangmin.meew.view.signup.adapter.CharacterViewPagerAdapter.CharacterInfoViewHolder" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardBackgroundColor="@android:color/transparent"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{()->holder.selectCharacter(item)}"
         app:layout_constraintDimensionRatio="1:1.3">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/drawable_round_box_stroke_grey500_8dp"
-            android:clickable="true"
-            android:focusable="true">
+            android:background="@drawable/drawable_round_box_stroke_grey500_8dp">
 
 
             <CheckBox
+                android:id="@+id/checkbox_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
