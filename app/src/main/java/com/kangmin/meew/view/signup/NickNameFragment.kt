@@ -1,5 +1,12 @@
 package com.kangmin.meew.view.signup
 
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.PorterDuff
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.BlendModeColorFilterCompat
+import androidx.core.graphics.BlendModeCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.activityViewModels
 import com.kangmin.base.BaseFragment
 import com.kangmin.meew.MeewApplication
@@ -21,7 +28,24 @@ class NickNameFragment : BaseFragment<FragmentNickNameBinding>(R.layout.fragment
         }
     }
 
+    override fun setObserve() {
+        super.setObserve()
+        viewModel.nickName.observe(viewLifecycleOwner) {
+            DrawableCompat.wrap(binding.edtNickName.background).clearColorFilter()
+        }
+    }
+
     fun hideKeyboard() {
         MeewApplication.mImm.hideSoftInputFromWindow(binding.root.windowToken, 0)
+    }
+
+    fun checkNickNameDuplicated() {
+        DrawableCompat.wrap(binding.edtNickName.background).colorFilter =
+            BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
+                ContextCompat.getColor(
+                    binding.root.context,
+                    R.color.red_500
+                ), BlendModeCompat.SRC_ATOP
+            )
     }
 }

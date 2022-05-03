@@ -73,6 +73,7 @@
             android:enabled="@{viewModel.nickName.length() > 0}"
             android:paddingVertical="16dp"
             android:text="완료"
+            android:onClick="@{()->fragment.checkNickNameDuplicated()}"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
