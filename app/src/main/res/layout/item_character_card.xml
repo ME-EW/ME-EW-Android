@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -13,8 +14,73 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/drawable_round_box_stroke_grey500_8dp">
+            android:background="@drawable/drawable_round_box_stroke_grey500_8dp"
+            android:clickable="true"
+            android:focusable="true">
 
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="false"
+                android:button="@drawable/ic_round_uncheck"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_character"
+                android:layout_width="210dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintWidth_percent="0.7"
+                android:background="@color/grey_400" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/grey_500"
+                app:layout_constraintBottom_toTopOf="@+id/txt_character_name"
+                app:layout_constraintTop_toBottomOf="@+id/img_character"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <TextView
+                android:id="@+id/txt_character_name"
+                style="@style/Title3_Bold_18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/txt_character_info"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:layout_editor_absoluteX="20dp"
+                android:text="캐릭터 이름" />
+
+            <TextView
+                android:id="@+id/txt_character_info"
+                style="@style/Body3_Regular_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/grey_300"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_character_name"
+                tools:layout_editor_absoluteX="20dp"
+                android:text="캐릭터 설명\n캐릭터 설명"
+                android:layout_marginBottom="8dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
