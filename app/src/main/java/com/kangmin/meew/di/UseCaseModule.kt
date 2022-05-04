@@ -1,6 +1,7 @@
 package com.kangmin.meew.di
 
 import com.example.domain.repository.LocalRepository
+import com.example.domain.repository.UserRepository
 import com.example.domain.usecase.LoginUseCase
 import com.example.domain.usecase.SignUpUseCase
 import dagger.Module
@@ -22,5 +23,7 @@ object UseCaseModule {
 
     @Singleton
     @Provides
-    fun provideSignUpUseCase(): SignUpUseCase = SignUpUseCase()
+    fun provideSignUpUseCase(
+        userRepo: UserRepository
+    ): SignUpUseCase = SignUpUseCase(userRepo)
 }

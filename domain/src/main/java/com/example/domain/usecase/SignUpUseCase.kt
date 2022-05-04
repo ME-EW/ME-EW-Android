@@ -1,12 +1,13 @@
 package com.example.domain.usecase
 
 import com.example.domain.model.CharacterInfo
+import com.example.domain.repository.UserRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class SignUpUseCase @Inject constructor(
-
+    private val userRepository: UserRepository
 ) {
     fun getCharacters(): List<CharacterInfo> {
         return listOf(

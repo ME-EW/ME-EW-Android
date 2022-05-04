@@ -14,8 +14,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
-    private val baseUrl = "https://asia-northeast3-meew-server.cloudfunctions.net/api/"
+object NetworkModule {
+    private const val baseUrl = "https://asia-northeast3-meew-server.cloudfunctions.net/api/"
 
     private val httpsClient = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
