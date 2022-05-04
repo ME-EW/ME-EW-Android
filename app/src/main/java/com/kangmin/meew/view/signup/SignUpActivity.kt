@@ -26,4 +26,9 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
             }
         }
     }
+
+    override fun getIntentData() {
+        super.getIntentData()
+        viewModel.kakaoToken = intent.getStringExtra("kakao_token") ?: ""
+    }
 }

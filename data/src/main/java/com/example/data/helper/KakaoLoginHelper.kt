@@ -42,7 +42,7 @@ class KakaoLoginHelper @Inject constructor(
                     loginListener.onFailed(error)
 
                 } else if (token != null) {
-                    loginListener.onSuccess()
+                    loginListener.onSuccess(token.accessToken)
                 }
             }
         } else {
@@ -51,6 +51,5 @@ class KakaoLoginHelper @Inject constructor(
                 callback = callbackWithKakaoAccount
             )
         }
-
     }
 }

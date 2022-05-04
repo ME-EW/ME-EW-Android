@@ -15,6 +15,9 @@ class SignUpViewModel @Inject constructor(
     private val signUpUseCase: SignUpUseCase
 ) : BaseViewModel() {
 
+    /** 카카오 AccessToken */
+    var kakaoToken: String = ""
+
     private val _characters = ListLiveData<CharacterInfo>()
     val characters: LiveData<List<CharacterInfo>> = _characters.map { it }
 
@@ -34,6 +37,7 @@ class SignUpViewModel @Inject constructor(
     val nickNameLengthText: LiveData<String> = nickName.map {
         return@map "${it.length}/10"
     }
+
 
     init {
         _characters.value = signUpUseCase.getCharacters().toMutableList()

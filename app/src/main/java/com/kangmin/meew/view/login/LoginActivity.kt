@@ -34,7 +34,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         viewModel.loginSuccess.observe(this) {
             it?.let { isSuccess ->
                 if (isSuccess) {
-                    startActivity(Intent(this, SignUpActivity::class.java))
+                    startActivity(
+                        Intent(this, SignUpActivity::class.java)
+                            .putExtra("kakao_token", viewModel.kakaoToken)
+                    )
                 }
             }
         }

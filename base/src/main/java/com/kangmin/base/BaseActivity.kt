@@ -23,10 +23,12 @@ abstract class BaseActivity <T : ViewDataBinding>(@LayoutRes private val resId: 
         binding.run {
             lifecycleOwner = this@BaseActivity
         }
+        getIntentData()
         setObserve()
         setClickEvent()
     }
 
+    open fun getIntentData() {}
     open fun setObserve() {}
     open fun setClickEvent() {}
 }

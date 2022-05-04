@@ -1,7 +1,7 @@
 package com.example.domain.listener
 
 interface LoginListener {
-    fun onSuccess()
+    fun onSuccess(token: String)
     fun onFailed(throwable: Throwable?)
     fun userCanceled()
 }
