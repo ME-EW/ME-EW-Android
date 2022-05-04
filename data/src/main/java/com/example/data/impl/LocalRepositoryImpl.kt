@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 class LocalRepositoryImpl @Inject constructor(
-    @Named("MEEW") private val sharedPref: SharedPreferences
+    @Named("MEEW_SharedPref") private val sharedPref: SharedPreferences
 ) : LocalRepository {
 
     override var test: String?

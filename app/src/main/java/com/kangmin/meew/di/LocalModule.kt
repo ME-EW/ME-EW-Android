@@ -1,6 +1,7 @@
 package com.kangmin.meew.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.EntryPoint
@@ -16,9 +17,9 @@ object LocalModule {
 
     @Provides
     @Singleton
-    @Named("MEEW")
-    fun provideSharePreference(
+    @Named("MEEW_SharedPref")
+    fun provideSharedPreference(
         @ApplicationContext context: Context
-    ) = context.getSharedPreferences("meew_local", Context.MODE_PRIVATE)
+    ): SharedPreferences = context.getSharedPreferences("meew_local", Context.MODE_PRIVATE)
 
 }

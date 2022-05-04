@@ -1,7 +1,9 @@
 package com.kangmin.meew.di
 
 import com.example.data.impl.LocalRepositoryImpl
+import com.example.data.impl.UserRepositoryImpl
 import com.example.domain.repository.LocalRepository
+import com.example.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,4 +19,8 @@ abstract class RepositoryModule {
     @Singleton
     @Named("SharedPref")
     abstract fun bindSharePrefRepository(localRepo: LocalRepositoryImpl): LocalRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindUserRepository(userRepo: UserRepositoryImpl): UserRepository
 }
