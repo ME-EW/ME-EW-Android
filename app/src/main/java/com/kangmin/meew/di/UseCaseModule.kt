@@ -1,5 +1,6 @@
 package com.kangmin.meew.di
 
+import com.example.domain.repository.CharacterRepository
 import com.example.domain.repository.LocalRepository
 import com.example.domain.repository.UserRepository
 import com.example.domain.usecase.LoginUseCase
@@ -24,6 +25,7 @@ object UseCaseModule {
     @Singleton
     @Provides
     fun provideSignUpUseCase(
-        userRepo: UserRepository
-    ): SignUpUseCase = SignUpUseCase(userRepo)
+        userRepo: UserRepository,
+        characterRepo: CharacterRepository
+    ): SignUpUseCase = SignUpUseCase(userRepo, characterRepo)
 }

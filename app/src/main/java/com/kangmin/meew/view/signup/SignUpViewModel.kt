@@ -40,7 +40,7 @@ class SignUpViewModel @Inject constructor(
 
 
     init {
-        _characters.value = signUpUseCase.getCharacters().toMutableList()
+        _characters.value = signUpUseCase.getCharactersDummy().toMutableList()
     }
 
 }

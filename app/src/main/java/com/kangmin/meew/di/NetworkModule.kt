@@ -1,5 +1,6 @@
 package com.kangmin.meew.di
 
+import com.example.data.service.CharacterService
 import com.example.data.service.UserService
 import dagger.Module
 import dagger.Provides
@@ -40,4 +41,8 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideUserService(): UserService = baseBuilder.create(UserService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideCharacterService(): CharacterService = baseBuilder.create(CharacterService::class.java)
 }

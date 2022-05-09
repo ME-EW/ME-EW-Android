@@ -37,7 +37,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:clickable="false"
-                android:button="@drawable/ic_round_uncheck"
+                android:button="@drawable/select_round_check_red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
