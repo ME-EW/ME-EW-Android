@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.CharacterInfo
 import com.kangmin.meew.databinding.ItemCharacterCardBinding
 import com.kangmin.meew.difftutil.CharacterDiffUtil
-import java.lang.Exception
 
 class CharacterViewPagerAdapter :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -77,6 +76,5 @@ class CharacterViewPagerAdapter :
                 notifyItemChanged(adapterPosition, true) // 현재 아이템을 선택
             }
         }
-
     }
 }

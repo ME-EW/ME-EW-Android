@@ -26,10 +26,6 @@ class LoginViewModel @Inject constructor(
     val kakaoToken: String
         get() = _kakaoToken
 
-    init {
-        _toastMsg.postValue(loginUseCase.getTest())
-    }
-
     fun loginKakao(context: Context) {
         if (MeewApplication.DEBUG) {
             _loginSuccess.postValue(true)

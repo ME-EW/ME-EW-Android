@@ -10,13 +10,4 @@ import javax.inject.Singleton
 class LocalRepositoryImpl @Inject constructor(
     @Named("MEEW_SharedPref") private val sharedPref: SharedPreferences
 ) : LocalRepository {
-
-    override var test: String?
-        get() = sharedPref.getString("test", "test")
-        set(value) {
-            with(sharedPref.edit()) {
-                putString("test", value)
-                apply()
-            }
-        }
 }

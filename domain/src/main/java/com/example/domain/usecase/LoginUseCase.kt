@@ -8,5 +8,4 @@ import javax.inject.Singleton
 class LoginUseCase @Inject constructor (
     private val sharedPref: LocalRepository
 ) {
-    fun getTest(): String = sharedPref.test ?: ""
 }

@@ -56,7 +56,7 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
             offscreenPageLimit = 2
             val offsetPx = 30.dp // 좌우 아이템이 보여지는 정도
             val marginPx = 10.dp // 현재 아이템과 좌우 아이템의 간격
-            setPadding(offsetPx, offsetPx, offsetPx, offsetPx)
+            setPadding(offsetPx, 0, offsetPx, 0)
             setPageTransformer(MarginPageTransformer(marginPx))
             adapter = characterInfoAdapter
         }

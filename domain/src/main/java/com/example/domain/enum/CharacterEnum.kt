@@ -8,5 +8,5 @@ enum class CharacterEnum(val code: Int) {
     FLOWER(5),
     CLOUD(6),
     DIRECTION(7),
-    MIND(8)
+    MIND(8);
 }
