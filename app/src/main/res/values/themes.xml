@@ -26,4 +26,12 @@
         <item name="android:textAppearance">@style/Title3_Bold_18</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="Meew_Progress_Bar" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="android:theme">@style/Theme.MaterialComponents.DayNight</item>
+        <item name="indicatorColor">@color/main_purple_500</item>
+        <item name="trackColor">@color/grey_600</item>
+        <item name="trackCornerRadius">8dp</item>
+        <item name="trackThickness">6dp</item>
+    </style>
 </resources>

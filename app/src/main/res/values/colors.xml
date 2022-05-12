@@ -9,11 +9,20 @@
     <color name="white">#FFFFFFFF</color>
     <color name="kakao">#FEE500</color>
 
-    <color name="main_purple_500">#7F64FF</color>
-    <color name="red_500">#FC5533</color>
-    <color name="yellow_500">#F6FA3A</color>
-    <color name="orange_500">#FEA800</color>
-    <color name="pink_500">#FC4FF5</color>
+    <color name="main_purple_500">#B839FF</color>
+
+    <color name="red_500">#F74711</color>
+
+    <color name="yellow_500">#FFFE63</color>
+
+    <color name="orange_500">#FE8919</color>
+
+    <color name="pink_500">#E570F8</color>
+    <color name="pink_400">#FFD6D3</color>
+
+    <color name="green_500">#9AFE28</color>
+
+    <color name="blue_500">#399CFF</color>
 
     <color name="grey_700">#222222</color>
     <color name="grey_600">#373737</color>
