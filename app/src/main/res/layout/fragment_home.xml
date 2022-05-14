@@ -130,7 +130,7 @@
                 android:checked="true"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
-                tools:text="평소 먹지 않은 메뉴 시키기" />
+                android:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
                 android:layout_width="match_parent"
@@ -145,7 +145,7 @@
                 android:checked="true"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
-                tools:text="평소 먹지 않은 메뉴 시키기" />
+                android:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
                 android:layout_width="match_parent"
@@ -160,7 +160,7 @@
                 android:checked="true"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
-                tools:text="평소 먹지 않은 메뉴 시키기" />
+                android:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
                 android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                 android:checked="true"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
-                tools:text="평소 먹지 않은 메뉴 시키기" />
+                android:text="평소 먹지 않은 메뉴 시키기" />
 
         </LinearLayout>
 

@@ -1,13 +1,15 @@
 package com.kangmin.meew.view.main
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import com.kangmin.base.BaseFragment
 import com.kangmin.meew.R
+import com.kangmin.meew.databinding.FragmentHomeBinding
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
+    override fun setOnCreateView() {
+    }
+
+    override fun setOnViewCreated() {
+    }
 }
