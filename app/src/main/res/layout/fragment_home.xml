@@ -117,7 +117,6 @@
             android:id="@+id/layout_main_contents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:background="@drawable/drawable_round_box_grey500_8"
             app:layout_constraintBottom_toTopOf="@id/btn_finish"
             android:orientation="vertical"
