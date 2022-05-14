@@ -4,4 +4,5 @@
     <string name="KAKAO_NATIVE_APP_KEY">e8b810e71ca9869160f85eb6d33a8c5d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="change_my_character"><u>오늘은 원래의 나로 살게요</u></string>
 </resources>
