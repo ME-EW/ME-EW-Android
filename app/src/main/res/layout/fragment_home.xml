@@ -60,7 +60,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_nickname"
             app:layout_constraintWidth_percent="0.4"
-            tools:background="@color/grey_500" />
+            android:background="@color/grey_500" />
 
         <TextView
             android:id="@+id/txt_level"
@@ -119,6 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="@drawable/drawable_round_box_grey500_8"
+            app:layout_constraintBottom_toTopOf="@id/btn_finish"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/img_character">
 
@@ -185,9 +186,9 @@
             style="@style/Meew_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="58dp"
             android:text="오늘 캐릭터 끝내기"
-            app:layout_constraintTop_toBottomOf="@id/layout_main_contents"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_change_my_character"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -200,8 +201,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_finish"
-            app:layout_constraintVertical_bias="0.3"
+            android:layout_marginBottom="32dp"
             tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
