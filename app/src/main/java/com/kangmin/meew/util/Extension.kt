@@ -2,6 +2,7 @@ package com.kangmin.meew.util
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
+import android.widget.Toast
 
 /**
  * Dlog를 남기기 위한 사전 작업
@@ -21,4 +22,10 @@ fun Context.isDebuggable(): Boolean {
     }
 
     return debuggable
+}
+
+fun Context?.showToast(msg: String, time: Int = Toast.LENGTH_SHORT) {
+    this?.let {
+        Toast.makeText(it, msg, time).show()
+    }
 }
