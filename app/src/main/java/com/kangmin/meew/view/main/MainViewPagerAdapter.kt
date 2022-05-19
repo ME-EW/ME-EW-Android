@@ -18,7 +18,7 @@ class MainViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(ac
             }
 
             2 -> {
-                HomeFragment()
+                RecordHistoryFragment()
             }
 
             else -> {
