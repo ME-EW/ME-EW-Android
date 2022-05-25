@@ -1,5 +1,5 @@
 object Versions {
-    const val gradle = "7.1.2"
+    const val gradle = "7.1.3"
 
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.5.0"
@@ -28,6 +28,7 @@ object AndroidXVersion {
 object JetPackVersion {
     const val hilt = "2.38.1"
     const val navigation = "2.4.2"
+    const val dataStore = "1.0.0"
 }
 
 object KTXVersion {

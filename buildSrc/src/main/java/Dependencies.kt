@@ -103,6 +103,8 @@ interface Libs {
         private const val navigationKtx = "androidx.navigation:navigation-fragment-ktx:${JetPackVersion.navigation}"
         private const val navigationUiKtx ="androidx.navigation:navigation-ui-ktx:${JetPackVersion.navigation}"
         private const val navigationDynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:${JetPackVersion.navigation}"
+        private const val preferencesDataStore = "androidx.datastore:datastore-preferences:${JetPackVersion.dataStore}"
+        private const val protoDataStore = "androidx.datastore:datastore:${JetPackVersion.dataStore}"
 
         override fun getDependencies(): List<DependencyType> {
             return listOf(
@@ -110,7 +112,9 @@ interface Libs {
                 DependencyType.Kapt(hiltCompiler),
                 DependencyType.Implementation(navigationKtx),
                 DependencyType.Implementation(navigationUiKtx),
-                DependencyType.Implementation(navigationDynamicFeatures)
+                DependencyType.Implementation(navigationDynamicFeatures),
+                DependencyType.Implementation(preferencesDataStore),
+                DependencyType.Implementation(protoDataStore)
             )
         }
 

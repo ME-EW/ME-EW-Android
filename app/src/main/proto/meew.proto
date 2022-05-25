@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.example.domain";
+option java_multiple_files = true;
+
+message UserPreferences{
+  int32 userID = 1;
+  string accessToken = 2;
+  string refreshToken = 3;
+  string nickName = 4;
+}
