@@ -11,6 +11,9 @@ object Versions {
     const val dotIndicator="4.2"
 
     const val coroutine = "1.6.1"
+
+    const val protoBuf = "0.8.17"
+    const val protoBufJavaLite = "3.19.4"
 }
 
 object NetworkVersion {

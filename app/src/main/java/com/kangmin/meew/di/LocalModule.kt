@@ -2,6 +2,7 @@ package com.kangmin.meew.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.data.datastore.ProtoDataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.EntryPoint
@@ -22,4 +23,9 @@ object LocalModule {
         @ApplicationContext context: Context
     ): SharedPreferences = context.getSharedPreferences("meew_local", Context.MODE_PRIVATE)
 
+    @Provides
+    @Singleton
+    fun provideProtoDataStore(
+        @ApplicationContext context: Context
+    ): ProtoDataStore = ProtoDataStore(context)
 }

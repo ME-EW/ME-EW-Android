@@ -105,6 +105,7 @@ interface Libs {
         private const val navigationDynamicFeatures = "androidx.navigation:navigation-dynamic-features-fragment:${JetPackVersion.navigation}"
         private const val preferencesDataStore = "androidx.datastore:datastore-preferences:${JetPackVersion.dataStore}"
         private const val protoDataStore = "androidx.datastore:datastore:${JetPackVersion.dataStore}"
+        private const val protoDataStoreBuf = "com.google.protobuf:protobuf-javalite:${Versions.protoBufJavaLite}"
 
         override fun getDependencies(): List<DependencyType> {
             return listOf(
@@ -114,7 +115,8 @@ interface Libs {
                 DependencyType.Implementation(navigationUiKtx),
                 DependencyType.Implementation(navigationDynamicFeatures),
                 DependencyType.Implementation(preferencesDataStore),
-                DependencyType.Implementation(protoDataStore)
+                DependencyType.Implementation(protoDataStore),
+                DependencyType.Implementation(protoDataStoreBuf)
             )
         }
 
