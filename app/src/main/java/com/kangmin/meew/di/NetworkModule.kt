@@ -1,6 +1,7 @@
 package com.kangmin.meew.di
 
 import com.example.data.service.CharacterService
+import com.example.data.service.LoginService
 import com.example.data.service.UserService
 import dagger.Module
 import dagger.Provides
@@ -37,6 +38,9 @@ object NetworkModule {
         return loggingInterceptor
     }
 
+    @Provides
+    @Singleton
+    fun provideLoginService(): LoginService = baseBuilder.create(LoginService::class.java)
 
     @Provides
     @Singleton
