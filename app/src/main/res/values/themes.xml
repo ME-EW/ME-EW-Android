@@ -51,7 +51,7 @@
     </style>
 
     <style name="CustomBottomSheet" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/shape_top_round_24dp_grey300</item>
+        <item name="android:background">@drawable/shape_top_round_24dp_grey500</item>
         <item name="behavior_peekHeight">700dp</item>
     </style>
 </resources>

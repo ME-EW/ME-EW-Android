@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meew">
         <activity
+            android:name=".view.configure.ConfigureActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.main.MainActivity"
             android:exported="true" />
         <activity
