@@ -21,10 +21,8 @@ class UserRepositoryImpl @Inject constructor(
         val response = userService.postSignUp(socialToken, socialType, nickName, characterIndex)
 
         return User(
-            userID = response.data.userId,
             accessToken = response.data.token.accessToken,
-            refreshToken = response.data.token.refreshToken,
-            nickName = nickName
+            refreshToken = response.data.token.refreshToken
         )
     }
 

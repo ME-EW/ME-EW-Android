@@ -22,7 +22,7 @@ class CharacterRepositoryMockImpl @Inject constructor() : CharacterRepository {
             refreshCount = 2,
             finished = false,
             todo = listOf(
-                Todo(id = "1", content = "Mock 1", complete = false),
+                Todo(id = "1", content = "Mock 1", complete = true),
                 Todo(id = "2", content = "Mock 2", complete = false),
                 Todo(id = "3", content = "Mock 3", complete = false),
                 Todo(id = "4", content = "Mock 4", complete = false)

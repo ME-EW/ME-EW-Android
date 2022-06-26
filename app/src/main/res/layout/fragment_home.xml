@@ -9,7 +9,8 @@
         <variable
             name="viewModel"
             type="com.kangmin.meew.view.main.MainViewModel" />
-        <import type="java.util.List"/>
+
+        <import type="java.util.List" />
 
     </data>
 
@@ -140,9 +141,12 @@
                 style="@style/Meew_Checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:background="@null"
+                android:checked="@{viewModel.todoInfo[0].complete}"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
+                android:text="@{viewModel.todoInfo[0].content}"
+                tools:checked="true"
                 tools:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
@@ -155,9 +159,12 @@
                 style="@style/Meew_Checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:background="@null"
+                android:checked="@{viewModel.todoInfo[1].complete}"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
+                android:text="@{viewModel.todoInfo[1].content}"
+                tools:checked="true"
                 tools:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
@@ -170,9 +177,12 @@
                 style="@style/Meew_Checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:background="@null"
+                android:checked="@{viewModel.todoInfo[2].complete}"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
+                android:text="@{viewModel.todoInfo[2].content}"
+                tools:checked="true"
                 tools:text="평소 먹지 않은 메뉴 시키기" />
 
             <View
@@ -185,9 +195,12 @@
                 style="@style/Meew_Checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:background="@null"
+                android:checked="@{viewModel.todoInfo[3].complete}"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
+                android:text="@{viewModel.todoInfo[3].content}"
+                tools:checked="true"
                 tools:text="평소 먹지 않은 메뉴 시키기" />
 
         </LinearLayout>
