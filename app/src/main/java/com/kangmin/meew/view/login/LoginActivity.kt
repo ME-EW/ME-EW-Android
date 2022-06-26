@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.kangmin.base.BaseActivity
 import com.kangmin.meew.databinding.ActivityLoginBinding
 import com.kangmin.meew.R
+import com.kangmin.meew.view.main.MainActivity
 import com.kangmin.meew.view.signup.SignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,7 +36,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             it?.let { isSuccess ->
                 if (isSuccess) {
                     startActivity(
-                        Intent(this, SignUpActivity::class.java)
+                        Intent(this, MainActivity::class.java)
                             .putExtra("kakao_token", viewModel.kakaoToken)
                     )
                 }
