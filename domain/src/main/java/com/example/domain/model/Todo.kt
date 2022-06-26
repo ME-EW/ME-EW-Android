@@ -1,7 +1,7 @@
 package com.example.domain.model
 
 data class Todo(
-    val id: String,
-    val content: String,
-    val complete: Boolean
+    var id: String,
+    var content: String,
+    var complete: Boolean
 )

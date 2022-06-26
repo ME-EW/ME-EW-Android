@@ -1,10 +1,11 @@
 package com.example.domain.model
 
 data class TodayTodo(
-    val nickname: String,
-    val characterName: String,
-    val level: Int,
-    val characterImage: String,
-    val refreshCount: Int,
-    val finished: Boolean
+    var nickname: String,
+    var characterName: String,
+    var level: Int,
+    var characterImage: String,
+    var refreshCount: Int,
+    var finished: Boolean,
+    var todo: List<Todo>
 )

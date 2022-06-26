@@ -17,6 +17,8 @@ data class ResponseTodayTodo(
         val nickname: String,
         @SerializedName("name")
         val characterName: String,
+        @SerializedName("level")
+        val characterLevel: Int,
         @SerializedName("imageUrl")
         val characterImage: String,
         @SerializedName("chance")
@@ -24,7 +26,7 @@ data class ResponseTodayTodo(
         @SerializedName("finished")
         val finished: Boolean,
         @SerializedName("todo")
-        val todo: ResponseTodo
+        val todo: List<ResponseTodo>
     )
 
     data class ResponseTodo(
