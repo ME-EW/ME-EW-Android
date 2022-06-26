@@ -4,8 +4,6 @@ option java_package = "com.example.data";
 option java_multiple_files = true;
 
 message UserProtoData{
-  int32 userID = 1;
-  string accessToken = 2;
-  string refreshToken = 3;
-  string nickName = 4;
+  string accessToken = 1;
+  string refreshToken = 2;
 }

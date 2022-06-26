@@ -17,10 +17,8 @@ class LoginRepositoryImpl @Inject constructor(
         )
 
         return User(
-            result.data.userId,
             result.data.token.accessToken,
             result.data.token.refreshToken,
-            ""
         )
     }
 }
