@@ -3,6 +3,7 @@ package com.kangmin.meew.di
 import com.example.domain.repository.CharacterRepository
 import com.example.domain.repository.LocalRepository
 import com.example.domain.repository.UserRepository
+import com.example.domain.usecase.CharacterUseCase
 import com.example.domain.usecase.LoginUseCase
 import com.example.domain.usecase.SignUpUseCase
 import dagger.Module
@@ -28,4 +29,10 @@ object UseCaseModule {
         userRepo: UserRepository,
         characterRepo: CharacterRepository
     ): SignUpUseCase = SignUpUseCase(userRepo, characterRepo)
+
+    @Singleton
+    @Provides
+    fun provideCharacterUseCase(
+        characterRepo: CharacterRepository
+    ): CharacterUseCase = CharacterUseCase(characterRepo)
 }

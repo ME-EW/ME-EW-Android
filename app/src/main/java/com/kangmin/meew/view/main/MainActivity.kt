@@ -1,6 +1,7 @@
 package com.kangmin.meew.view.main
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.kangmin.base.BaseActivity
 import com.kangmin.meew.R
@@ -9,6 +10,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+
+    private val viewModel by viewModels<MainViewModel>()
+
     private val viewpagerAdapter by lazy {
         MainViewPagerAdapter(this)
     }

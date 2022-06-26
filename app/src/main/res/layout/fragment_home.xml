@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="RtlSymmetry">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kangmin.meew.view.main.MainViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +24,7 @@
             android:layout_marginTop="44dp"
             android:ellipsize="end"
             android:lines="1"
+            android:text="@{viewModel.nickNameLiveData}"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -45,6 +53,7 @@
                 style="@style/Body6_Medium_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{viewModel.refreshCountLiveData}"
                 android:textColor="@color/grey_400"
                 tools:text="1/3" />
         </LinearLayout>
@@ -54,19 +63,20 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
+            android:background="@color/grey_500"
             android:paddingHorizontal="21dp"
             android:scaleType="centerInside"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_nickname"
-            app:layout_constraintWidth_percent="0.4"
-            android:background="@color/grey_500" />
+            app:layout_constraintWidth_percent="0.4" />
 
         <TextView
             android:id="@+id/txt_level"
             style="@style/Body2_Medium_14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@{viewModel.characterLevelLiveData}"
             app:layout_constraintBottom_toTopOf="@+id/txt_character_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -83,6 +93,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:lines="1"
+            android:text="@{viewModel.todayTodoInfo.characterName}"
             app:layout_constraintBottom_toTopOf="@+id/progress_exp"
             app:layout_constraintEnd_toStartOf="@+id/btn_character_info"
             app:layout_constraintHorizontal_bias="0.5"
@@ -118,8 +129,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drawable_round_box_grey500_8"
-            app:layout_constraintBottom_toTopOf="@id/btn_finish"
             android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/btn_finish"
             app:layout_constraintTop_toBottomOf="@id/img_character">
 
             <CheckBox
@@ -185,8 +196,8 @@
             style="@style/Meew_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="오늘 캐릭터 끝내기"
             android:layout_marginBottom="16dp"
+            android:text="오늘 캐릭터 끝내기"
             app:layout_constraintBottom_toTopOf="@id/btn_change_my_character"
             tools:ignore="HardcodedText" />
 
@@ -195,12 +206,12 @@
             style="@style/Body4_Medium_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:text="@string/change_my_character"
             android:textColor="@color/grey_400"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="32dp"
             tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
