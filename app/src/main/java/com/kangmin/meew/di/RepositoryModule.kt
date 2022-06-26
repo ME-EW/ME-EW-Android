@@ -24,9 +24,11 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
+    @Named("User")
     abstract fun bindUserRepository(userRepo: UserRepositoryImpl): UserRepository
 
     @Binds
     @Singleton
+    @Named("Character")
     abstract fun bindCharacterRepository(characterRepo: CharacterRepositoryImpl): CharacterRepository
 }

@@ -26,13 +26,13 @@ object UseCaseModule {
     @Singleton
     @Provides
     fun provideSignUpUseCase(
-        userRepo: UserRepository,
-        characterRepo: CharacterRepository
+        @Named("User")userRepo: UserRepository,
+        @Named("Character")characterRepo: CharacterRepository
     ): SignUpUseCase = SignUpUseCase(userRepo, characterRepo)
 
     @Singleton
     @Provides
     fun provideCharacterUseCase(
-        characterRepo: CharacterRepository
+        @Named("CharacterMock")characterRepo: CharacterRepository
     ): CharacterUseCase = CharacterUseCase(characterRepo)
 }
