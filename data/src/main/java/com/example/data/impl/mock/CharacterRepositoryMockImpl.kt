@@ -20,7 +20,7 @@ class CharacterRepositoryMockImpl @Inject constructor() : CharacterRepository {
             level = 3,
             characterImage = "",
             refreshCount = 2,
-            finished = false,
+            finished = true,
             todo = listOf(
                 Todo(id = "1", content = "Mock 1", complete = true),
                 Todo(id = "2", content = "Mock 2", complete = false),

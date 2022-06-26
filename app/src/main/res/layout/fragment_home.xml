@@ -212,7 +212,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="오늘 캐릭터 끝내기"
+            android:text="@{!viewModel.todayTodoInfo.finished ? `오늘 캐릭터 끝내기` : `오늘의 캐릭터를 완료했어요!`}"
+            android:enabled="@{!viewModel.todayTodoInfo.finished}"
             app:layout_constraintBottom_toTopOf="@id/btn_change_my_character"
             tools:ignore="HardcodedText" />
 
