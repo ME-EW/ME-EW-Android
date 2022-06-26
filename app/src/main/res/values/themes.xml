@@ -40,7 +40,7 @@
     <style name="Meew_Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:textAppearance">@style/Body3_Regular_14</item>
         <item name="android:button">@null</item>
-        <item name="android:drawableStart">@drawable/selector_square_check_24dp</item>
+        <item name="android:drawableStart">@drawable/selector_square_check_purple_24dp</item>
         <item name="android:drawablePadding">8dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
