@@ -31,7 +31,7 @@ data class ResponseTodayTodo(
 
     data class ResponseTodo(
         @SerializedName("taskId")
-        val taskId: String,
+        val taskId: Int,
         @SerializedName("content")
         val content: String,
         @SerializedName("Boolean")
