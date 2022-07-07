@@ -17,4 +17,13 @@ class CharacterUseCase @Inject constructor(
             emit(it)
         }
     }
+
+    /** 투두 아이템 체크 전달 */
+    fun checkTodoResponseFlow(taskId: Int) = flow {
+        kotlin.runCatching {
+            characterRepo.checkTodo(taskId)
+        }.onSuccess {
+            emit(it)
+        }
+    }
 }

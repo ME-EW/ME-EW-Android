@@ -6,4 +6,5 @@ import com.example.domain.model.TodayTodo
 interface CharacterRepository {
     suspend fun getCharacters(): List<CharacterInfo>
     suspend fun getTodayTodo(): TodayTodo
+    suspend fun checkTodo(taskId: Int): TodayTodo
 }

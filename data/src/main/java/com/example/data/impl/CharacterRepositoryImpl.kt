@@ -60,4 +60,34 @@ class CharacterRepositoryImpl @Inject constructor(
             result
         }
     }
+
+    override suspend fun checkTodo(taskId: Int): TodayTodo {
+        val callbackResult = characterService.checkTodo(taskId).data
+        val todoList = mutableListOf<Todo>()
+
+        return callbackResult.run {
+            val result = TodayTodo(
+                nickname = nickname,
+                characterName = characterName,
+                level = characterLevel,
+                characterImage = characterImage,
+                refreshCount = refreshCount,
+                finished = finished,
+                todo = listOf()
+            )
+
+            todo.forEach {
+                todoList.add(
+                    Todo(
+                        id = it.taskId,
+                        content = it.content,
+                        complete = it.complete
+                    )
+                )
+            }
+            result.todo = todoList
+
+            result
+        }
+    }
 }
