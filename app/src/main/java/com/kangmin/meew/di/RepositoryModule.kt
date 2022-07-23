@@ -2,9 +2,11 @@ package com.kangmin.meew.di
 
 import com.example.data.impl.CharacterRepositoryImpl
 import com.example.data.impl.LocalRepositoryImpl
+import com.example.data.impl.LoginRepositoryImpl
 import com.example.data.impl.UserRepositoryImpl
 import com.example.domain.repository.CharacterRepository
 import com.example.domain.repository.LocalRepository
+import com.example.domain.repository.LoginRepository
 import com.example.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -31,4 +33,8 @@ abstract class RepositoryModule {
     @Singleton
     @Named("Character")
     abstract fun bindCharacterRepository(characterRepo: CharacterRepositoryImpl): CharacterRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindLoginRepository(loginRepo: LoginRepositoryImpl): LoginRepository
 }

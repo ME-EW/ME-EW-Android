@@ -4,24 +4,26 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import retrofit2.HttpException
 
-class FlowApi() {
+class FlowApi<T>(private val flowItem: Flow<T>) {
     private var httpException: (suspend (errCode: Int) -> Unit)? = null
     private var etcException: (suspend () -> Unit)? = null
-    private var onSuccess: (suspend () -> Unit)? = null
+    private var onSuccess: (suspend (T) -> Unit)? = null
 
+    inner class FlowBuilder {
 
-    inner class FlowBuilder<T>(private val flowItem: Flow<T>) {
-
-        fun onSuccess(l: suspend () -> Unit) {
+        fun onSuccess(l: suspend (T) -> Unit): FlowBuilder {
             onSuccess = l
+            return this
         }
 
-        fun onHttpException(l: (suspend (errCode: Int) -> Unit)) {
+        fun onHttpException(l: (suspend (errCode: Int) -> Unit)): FlowBuilder {
             httpException = l
+            return this
         }
 
-        fun onEtcException(l: (suspend () -> Unit)) {
+        fun onEtcException(l: (suspend () -> Unit)): FlowBuilder {
             etcException = l
+            return  this
         }
 
         suspend fun build() {

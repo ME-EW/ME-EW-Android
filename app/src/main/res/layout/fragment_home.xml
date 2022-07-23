@@ -144,7 +144,7 @@
                 android:background="@null"
                 android:checked="@{viewModel.todoInfo[0].complete}"
                 android:clickable="@{!viewModel.todoInfo[0].complete}"
-                android:focusable="@{!viewModel.todoInfo[0].complet}"
+                android:focusable="@{!viewModel.todoInfo[0].complete}"
                 android:onClick="@{() -> viewModel.checkTodoItem(0)}"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"

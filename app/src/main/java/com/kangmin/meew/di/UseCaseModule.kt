@@ -2,6 +2,7 @@ package com.kangmin.meew.di
 
 import com.example.domain.repository.CharacterRepository
 import com.example.domain.repository.LocalRepository
+import com.example.domain.repository.LoginRepository
 import com.example.domain.repository.UserRepository
 import com.example.domain.usecase.CharacterUseCase
 import com.example.domain.usecase.LoginUseCase
@@ -20,8 +21,9 @@ object UseCaseModule {
     @Singleton
     @Provides
     fun provideLoginUseCase(
-        @Named("SharedPref") sharedPrefRepo: LocalRepository
-    ): LoginUseCase = LoginUseCase(sharedPrefRepo)
+        @Named("SharedPref") sharedPrefRepo: LocalRepository,
+        loginRepository: LoginRepository
+    ): LoginUseCase = LoginUseCase(sharedPrefRepo, loginRepository)
 
     @Singleton
     @Provides
@@ -33,6 +35,6 @@ object UseCaseModule {
     @Singleton
     @Provides
     fun provideCharacterUseCase(
-        @Named("CharacterMock")characterRepo: CharacterRepository
+        @Named("Character")characterRepo: CharacterRepository
     ): CharacterUseCase = CharacterUseCase(characterRepo)
 }

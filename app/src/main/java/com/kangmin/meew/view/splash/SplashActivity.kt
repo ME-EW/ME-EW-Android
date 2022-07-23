@@ -36,11 +36,34 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
         splashViewModel.run {
             userInLocal.observe(this@SplashActivity) {
                 it?.let { isIn ->
-                    showToast(if (isIn) "자동 로그인" else "유저 정보가 없습니다.")
-                    startActivity(Intent(this@SplashActivity, if (isIn) MainActivity::class.java else LoginActivity::class.java))
-                    finish()
+                    if (isIn) {
+                        splashViewModel.login()
+                    } else {
+                        openLoginActivity()
+                    }
+
+                }
+            }
+
+            isSuccessLogin.observe(this@SplashActivity) {
+                it?.let { loginSuccess ->
+                    if (loginSuccess) {
+                        openMainActivity()
+                    } else {
+                        openLoginActivity()
+                    }
                 }
             }
         }
+    }
+
+    private fun openLoginActivity() {
+        startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+        finish()
+    }
+
+    private fun openMainActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
