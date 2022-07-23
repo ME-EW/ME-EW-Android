@@ -26,4 +26,13 @@ class CharacterUseCase @Inject constructor(
             emit(it)
         }
     }
+
+    /** 캐릭터 새로고침 진행 후 결과값 전달 */
+    fun refreshCharacterResponseFlow() = flow {
+        kotlin.runCatching {
+            characterRepo.refreshCharacter()
+        }.onSuccess {
+            emit(it)
+        }
+    }
 }

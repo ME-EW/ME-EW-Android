@@ -19,4 +19,8 @@ interface CharacterService {
     @FormUrlEncoded
     @PATCH("personality/check")
     suspend fun checkTodo(@Field("taskId") taskId: Int): ResponseTodayTodo
+
+    /** 캐릭터 새로고침  */
+    @GET("personality/new")
+    suspend fun refreshCharacter(): ResponseTodayTodo
 }

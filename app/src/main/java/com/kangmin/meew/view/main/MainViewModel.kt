@@ -8,6 +8,7 @@ import com.example.domain.model.TodayTodo
 import com.example.domain.model.Todo
 import com.example.domain.usecase.CharacterUseCase
 import com.kangmin.base.BaseViewModel
+import com.kangmin.meew.util.apiCatching
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
@@ -64,4 +65,17 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun refreshCharacter() {
+        viewModelScope.launch(Dispatchers.IO) {
+            characterUseCase.refreshCharacterResponseFlow().catch {
+                if (it is HttpException) {
+                    _toastMsg.postValue(it.code().toString())
+                } else {
+                    _toastMsg.postValue("서버 문제로 인한 새로고침 실패")
+                }
+            }.collect {
+                _todayTodoInfo.postValue(it)
+            }
+        }
+    }
 }
