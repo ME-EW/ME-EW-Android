@@ -4,12 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.kangmin.base.BaseActivity
 import com.kangmin.meew.databinding.ActivityLoginBinding
 import com.kangmin.meew.R
 import com.kangmin.meew.view.main.MainActivity
 import com.kangmin.meew.view.signup.SignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
@@ -32,15 +41,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             }
         }
 
-        viewModel.loginSuccess.observe(this) {
-            it?.let { isSuccess ->
+        viewModel.loginSuccessState.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
+            .onEach { isSuccess ->
                 if (isSuccess) {
                     startActivity(
                         Intent(this, MainActivity::class.java)
                             .putExtra("kakao_token", viewModel.kakaoToken)
                     )
                 }
-            }
-        }
+            }.launchIn(lifecycleScope)
     }
 }

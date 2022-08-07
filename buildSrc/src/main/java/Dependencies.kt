@@ -137,6 +137,7 @@ interface Libs {
         private const val fragment = "androidx.fragment:fragment-ktx:${KTXVersion.fragment}"
         private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${KTXVersion.lifeCycle}"
         private const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${KTXVersion.lifeCycle}"
+        private const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${KTXVersion.lifeCycle}"
         private const val collection = "androidx.collection:collection-ktx:${KTXVersion.collection}"
 
         override fun getDependencies(): List<DependencyType> {
@@ -145,6 +146,7 @@ interface Libs {
                 DependencyType.Implementation(fragment),
                 DependencyType.Implementation(viewModel),
                 DependencyType.Implementation(liveData),
+                DependencyType.Implementation(runtime),
                 DependencyType.Implementation(collection)
             )
         }

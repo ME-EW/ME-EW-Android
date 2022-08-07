@@ -35,7 +35,7 @@ object JetPackVersion {
 }
 
 object KTXVersion {
-    const val lifeCycle = "2.4.1"
+    const val lifeCycle = "2.5.1"
     const val activity = "1.4.0"
     const val fragment = "1.4.1"
     const val collection = "1.2.0"
