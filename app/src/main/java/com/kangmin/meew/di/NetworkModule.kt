@@ -3,6 +3,9 @@ package com.kangmin.meew.di
 import com.example.data.service.CharacterService
 import com.example.data.service.LoginService
 import com.example.data.service.UserService
+import com.facebook.flipper.plugins.network.FlipperOkhttpInterceptor
+import com.kangmin.meew.BuildConfig
+import com.kangmin.meew.util.FlipperUtil
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,12 +22,15 @@ import javax.inject.Singleton
 object NetworkModule {
     private const val baseUrl = "https://asia-northeast3-meew-server.cloudfunctions.net/api/"
 
-    private val httpsClient = OkHttpClient.Builder()
-        .connectTimeout(30, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(30, TimeUnit.SECONDS)
-        .addInterceptor(getHttpLoggingInterceptor())
-        .build()
+    private val httpsClient = OkHttpClient.Builder().apply {
+        connectTimeout(30, TimeUnit.SECONDS)
+        readTimeout(30, TimeUnit.SECONDS)
+        writeTimeout(30, TimeUnit.SECONDS)
+        addInterceptor(getHttpLoggingInterceptor())
+        if (BuildConfig.DEBUG) {
+            addNetworkInterceptor(FlipperOkhttpInterceptor(FlipperUtil.networkFlipperPlugin))
+        }
+    }.build()
 
     private val baseBuilder = Retrofit.Builder()
         .baseUrl(baseUrl)

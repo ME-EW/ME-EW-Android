@@ -1,10 +1,10 @@
 object Versions {
-    const val gradle = "7.1.3"
+    const val gradle = "7.2.0"
 
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.5.0"
 
-    const val kotlin = "1.6.21"
+    const val kotlin = "1.7.10"
 
     const val kakao = "2.9.0"
 
@@ -49,4 +49,10 @@ object TestDependenciesVersion {
     const val mockitoInlineVersion = "2.13.0"
     const val androidJunitTestVersion = "1.4.0"
     const val espressoVersion = "3.4.0"
+}
+
+object FlipperVersion {
+    const val flipperVersion = "0.155.0"
+    const val soLoaderVersion = "0.10.4"
+    const val networkVersion = "0.155.0"
 }

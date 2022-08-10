@@ -18,6 +18,10 @@ class MeewApplication : Application() {
         DEBUG = this.isDebuggable()
         pixelRatio = PixelRatio(this)
         mImm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+        if(BuildConfig.DEBUG) {
+            FlipperUtil.init(this)
+        }
     }
 
     companion object {
