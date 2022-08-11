@@ -1,5 +1,6 @@
 package com.example.data.impl
 
+import com.example.data.entity.request.RequestLogin
 import com.example.data.service.LoginService
 import com.example.domain.model.User
 import com.example.domain.repository.LoginRepository
@@ -11,10 +12,7 @@ class LoginRepositoryImpl @Inject constructor(
     private val loginService: LoginService
 ) : LoginRepository {
     override suspend fun postLogin(socialToken: String): User {
-        val result = loginService.postLogin(
-            socialToken,
-            "kakao"
-        )
+        val result = loginService.postLogin(RequestLogin(socialToken, "KAKAO"))
 
         return User(
             result.data.token.accessToken,

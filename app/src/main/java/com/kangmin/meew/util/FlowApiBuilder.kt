@@ -2,6 +2,7 @@ package com.kangmin.meew.util
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collectLatest
 import retrofit2.HttpException
 
 class FlowApi<T>(private val flowItem: Flow<T>) {
@@ -33,7 +34,7 @@ class FlowApi<T>(private val flowItem: Flow<T>) {
                 } else {
                     etcException
                 }
-            }.collect {
+            }.collectLatest {
                 onSuccess
             }
         }

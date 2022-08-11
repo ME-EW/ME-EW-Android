@@ -13,9 +13,9 @@ import com.kangmin.meew.MeewApplication
 import com.kangmin.meew.util.Dlog
 import com.kangmin.meew.util.FlowApi
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -66,6 +66,8 @@ class LoginViewModel @Inject constructor(
                     _loginSuccessState.value = it
                 }.onHttpException {
                     _toastMsg.postValue("로그인에 실패했습니다.err:$it")
+                }.onEtcException {
+                    _toastMsg.postValue("로그인에 실패했습니다.")
                 }.build()
         }
     }
