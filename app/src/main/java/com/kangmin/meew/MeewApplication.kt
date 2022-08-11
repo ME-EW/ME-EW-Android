@@ -6,6 +6,7 @@ import android.view.inputmethod.InputMethodManager
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.util.Utility
 import com.kangmin.meew.util.Dlog
+import com.kangmin.meew.util.FlipperUtil
 import com.kangmin.meew.util.PixelRatio
 import com.kangmin.meew.util.isDebuggable
 import dagger.hilt.android.HiltAndroidApp

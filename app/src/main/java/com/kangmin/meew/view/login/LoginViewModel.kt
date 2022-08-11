@@ -41,7 +41,7 @@ class LoginViewModel @Inject constructor(
                 }
 
                 override fun onFailed(throwable: Throwable?) {
-                    Dlog.e(throwable?.stackTrace.toString())
+                    Dlog.e(throwable?.message.toString())
                 }
 
                 override fun userCanceled() {

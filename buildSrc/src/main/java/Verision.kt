@@ -4,9 +4,9 @@ object Versions {
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.5.0"
 
-    const val kotlin = "1.7.10"
+    const val kotlin = "1.7.0"
 
-    const val kakao = "2.9.0"
+    const val kakao = "2.11.0"
 
     const val dotIndicator="4.2"
 
@@ -24,12 +24,12 @@ object NetworkVersion {
 
 object AndroidXVersion {
     const val constraintLayoutVersion = "2.1.3"
-    const val coreKtx = "1.7.0"
-    const val appCompat = "1.4.1"
+    const val coreKtx = "1.8.0"
+    const val appCompat = "1.4.2"
 }
 
 object JetPackVersion {
-    const val hilt = "2.38.1"
+    const val hilt = "2.42"
     const val navigation = "2.4.2"
     const val dataStore = "1.0.0"
 }
@@ -52,7 +52,7 @@ object TestDependenciesVersion {
 }
 
 object FlipperVersion {
-    const val flipperVersion = "0.155.0"
+    const val flipperVersion = "0.157.0"
     const val soLoaderVersion = "0.10.4"
-    const val networkVersion = "0.155.0"
+    const val networkVersion = "0.157.0"
 }

@@ -162,7 +162,7 @@ interface Libs {
     }
 
     object Flipper: Libs {
-        private const val flipper = "com.facebook.flipper:flipper:${FlipperVersion.flipperVersion}}"
+        private const val flipper = "com.facebook.flipper:flipper:${FlipperVersion.flipperVersion}"
         private const val soLoader = "com.facebook.soloader:soloader:${FlipperVersion.soLoaderVersion}"
         private const val noop = "com.facebook.flipper:flipper-noop:${FlipperVersion.flipperVersion}"
         private const val network = "com.facebook.flipper:flipper-network-plugin:${FlipperVersion.networkVersion}"
