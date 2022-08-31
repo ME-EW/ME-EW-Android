@@ -1,8 +1,5 @@
 package com.kangmin.meew.view.signup
 
-import android.graphics.Color
-import android.graphics.ColorFilter
-import android.graphics.PorterDuff
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
@@ -12,7 +9,6 @@ import com.kangmin.base.BaseFragment
 import com.kangmin.meew.MeewApplication
 import com.kangmin.meew.R
 import com.kangmin.meew.databinding.FragmentNickNameBinding
-import gun0912.tedkeyboardobserver.TedKeyboardObserver
 
 class NickNameFragment : BaseFragment<FragmentNickNameBinding>(R.layout.fragment_nick_name) {
 

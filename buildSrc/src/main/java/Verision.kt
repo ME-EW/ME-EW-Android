@@ -1,5 +1,5 @@
 object Versions {
-    const val gradle = "7.2.2"
+    const val gradle = "7.1.3"
 
     const val glideVersion = "4.13.0"
     const val materialVersion = "1.5.0"
