@@ -30,7 +30,7 @@ class FlowApi<T>(private val flowItem: Flow<T>) {
         suspend fun build() {
             flowItem.catch {
                 if (it is HttpException) {
-                    httpException
+                    httpException?.let { exception -> exception(it.code()) }
                 } else {
                     etcException
                 }
