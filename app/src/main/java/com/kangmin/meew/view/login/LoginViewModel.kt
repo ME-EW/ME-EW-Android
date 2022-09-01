@@ -24,8 +24,8 @@ class LoginViewModel @Inject constructor(
     private val kakaoLogin: KakaoLoginHelper
 ) : BaseViewModel() {
 
-    private val _loginSuccessState = MutableStateFlow(false)
-    val loginSuccessState: StateFlow<Boolean> = _loginSuccessState
+    private val _loginSuccessState = MutableStateFlow<Boolean?>(null)
+    val loginSuccessState: StateFlow<Boolean?> = _loginSuccessState
 
     private var _kakaoToken = ""
     val kakaoToken: String
@@ -60,15 +60,16 @@ class LoginViewModel @Inject constructor(
     }
 
     private fun callLogin() {
-        viewModelScope.launch {
-            FlowApi(loginUseCase.loginFlow(_kakaoToken)).FlowBuilder()
-                .onSuccess {
-                    _loginSuccessState.value = it
-                }.onHttpException {
-                    _toastMsg.postValue("로그인에 실패했습니다.err:$it")
-                }.onEtcException {
-                    _toastMsg.postValue("로그인에 실패했습니다.")
-                }.build()
-        }
+        _loginSuccessState.value = false
+//        viewModelScope.launch {
+//            FlowApi(loginUseCase.loginFlow(_kakaoToken)).FlowBuilder()
+//                .onSuccess {
+//                    _loginSuccessState.value = it
+//                }.onHttpException {
+//                    _toastMsg.postValue("로그인에 실패했습니다.err:$it")
+//                }.onEtcException {
+//                    _toastMsg.postValue("로그인에 실패했습니다.")
+//                }.build()
+//        }
     }
 }

@@ -42,12 +42,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
 
         viewModel.loginSuccessState.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
-            .onEach { isSuccess ->
-                if (isSuccess) {
-                    startActivity(
-                        Intent(this, MainActivity::class.java)
-                            .putExtra("kakao_token", viewModel.kakaoToken)
-                    )
+            .onEach {
+                it?.let { isSuccess ->
+                    if (isSuccess) {
+                        startActivity(
+                            Intent(this, MainActivity::class.java)
+                                .putExtra("kakao_token", viewModel.kakaoToken)
+                        )
+                    } else {
+                        startActivity(
+                            Intent(this, SignUpActivity::class.java)
+                        )
+                    }
                 }
             }.launchIn(lifecycleScope)
     }

@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.PATCH
 
 interface CharacterService {
-    @GET("personality/list")
+    @GET("personality")
     suspend fun getCharacters(): ResponseCharacter
 
     /** 오늘의 캐릭터 가져오기 */
