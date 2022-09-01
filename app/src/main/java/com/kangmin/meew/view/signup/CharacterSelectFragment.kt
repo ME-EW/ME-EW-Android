@@ -1,5 +1,7 @@
 package com.kangmin.meew.view.signup
 
+import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -18,9 +20,7 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
         CharacterViewPagerAdapter()
     }
 
-    override fun setOnCreateView() {
-        initCharacterCard()
-    }
+    override fun setOnCreateView() {}
 
     override fun setOnViewCreated() {
         binding.run {
@@ -35,15 +35,9 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
         viewModel.run {
             characters.observe(viewLifecycleOwner) {
                 characterInfoAdapter.characterInfoDiffUtil.set(it.toMutableList())
-            }
-            selectedCharacterLiveData.observe(viewLifecycleOwner) {
-                binding.btnNext.isEnabled = (it != null)
+                initCharacterCard()
             }
         }
-    }
-
-    override fun setClickEvent() {
-        super.setClickEvent()
     }
 
     private fun initCharacterCard() {

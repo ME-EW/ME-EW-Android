@@ -11,6 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.kangmin.base.BaseActivity
 import com.kangmin.meew.databinding.ActivityLoginBinding
 import com.kangmin.meew.R
+import com.kangmin.meew.util.Dlog
 import com.kangmin.meew.view.main.MainActivity
 import com.kangmin.meew.view.signup.SignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,20 +42,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             }
         }
 
-        viewModel.loginSuccessState.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
-            .onEach {
-                it?.let { isSuccess ->
-                    if (isSuccess) {
-                        startActivity(
-                            Intent(this, MainActivity::class.java)
-                                .putExtra("kakao_token", viewModel.kakaoToken)
-                        )
-                    } else {
-                        startActivity(
-                            Intent(this, SignUpActivity::class.java)
-                        )
-                    }
+        viewModel.loginSuccessState.observe(this) {
+            it?.let { isSuccess ->
+                if (isSuccess) {
+                    startActivity(
+                        Intent(this@LoginActivity, MainActivity::class.java)
+                            .putExtra("kakao_token", viewModel.kakaoToken)
+                    )
+                } else {
+                    startActivity(
+                        Intent(this@LoginActivity, SignUpActivity::class.java)
+                    )
                 }
-            }.launchIn(lifecycleScope)
+            }
+        }
     }
 }

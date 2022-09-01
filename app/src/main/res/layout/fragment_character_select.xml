@@ -2,9 +2,11 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="fragment"
             type="com.kangmin.meew.view.signup.CharacterSelectFragment" />
+
         <variable
             name="viewModel"
             type="com.kangmin.meew.view.signup.SignUpViewModel" />
@@ -36,8 +38,8 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:orientation="horizontal"
-            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintBottom_toTopOf="@id/dot_indicator"
+            app:layout_constraintHeight_percent="0.5"
             app:layout_constraintTop_toBottomOf="@id/txt_title"
             tools:background="@color/white" />
 
@@ -61,11 +63,12 @@
             style="@style/Meew_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:text="이 캐릭터로 할래요"
-            android:paddingVertical="16dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="40dp"
+            android:enabled="@{viewModel.selectedCharacterLiveData != null}"
             android:onClick="@{()->fragment.moveNickNameStep()}"
+            android:paddingVertical="16dp"
+            android:text="이 캐릭터로 할래요"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

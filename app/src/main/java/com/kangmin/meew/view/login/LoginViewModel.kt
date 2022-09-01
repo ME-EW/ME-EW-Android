@@ -24,8 +24,8 @@ class LoginViewModel @Inject constructor(
     private val kakaoLogin: KakaoLoginHelper
 ) : BaseViewModel() {
 
-    private val _loginSuccessState = MutableStateFlow<Boolean?>(null)
-    val loginSuccessState: StateFlow<Boolean?> = _loginSuccessState
+    private val _loginSuccessState = MutableLiveData<Boolean>()
+    val loginSuccessState: LiveData<Boolean> = _loginSuccessState
 
     private var _kakaoToken = ""
     val kakaoToken: String

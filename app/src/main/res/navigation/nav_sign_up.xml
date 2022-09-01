@@ -14,16 +14,14 @@
             android:id="@+id/action_characterSelectFragment_to_nickNameFragment"
             app:destination="@id/nickNameFragment"
             app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/anim_nothing"/>
+            app:exitAnim="@anim/anim_nothing"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/anim_nothing"/>
     </fragment>
     <fragment
         android:id="@+id/nickNameFragment"
         android:name="com.kangmin.meew.view.signup.NickNameFragment"
         android:label="NickNameFragment"
         tools:layout="@layout/fragment_nick_name">
-        <action
-            android:id="@+id/back_stack"
-            app:popEnterAnim="@anim/anim_nothing"
-            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 </navigation>
