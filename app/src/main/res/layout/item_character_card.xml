@@ -51,7 +51,7 @@
                 android:id="@+id/img_character"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/grey_400"
+                app:bindingApiDefaultGlide="@{item.image}"
                 app:layout_constraintBottom_toTopOf="@+id/divider"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"

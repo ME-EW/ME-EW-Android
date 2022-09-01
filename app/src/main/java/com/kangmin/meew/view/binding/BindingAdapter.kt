@@ -1,8 +1,11 @@
 package com.kangmin.meew.view.binding
 
 import android.widget.CheckBox
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.domain.enum.CharacterEnum
 import com.example.domain.model.CharacterInfo
 import com.kangmin.meew.R
@@ -92,4 +95,16 @@ fun CheckBox.setSquareCheckBox(id: Int) {
         buttonDrawable = null
         setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
     }
+}
+
+@BindingAdapter("app:bindingApiDefaultGlide", "app:glideRequestOption", requireAll = false)
+fun ImageView.bindingApiDefaultGlide(url: String?, requestOptions: RequestOptions?) {
+    if (url.isNullOrBlank()) {
+        return
+    }
+
+    Glide.with(this)
+        .load(url)
+        .apply(requestOptions?.skipMemoryCache(true) ?: RequestOptions().skipMemoryCache(true))
+        .into(this)
 }

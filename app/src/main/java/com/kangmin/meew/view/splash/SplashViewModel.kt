@@ -36,7 +36,7 @@ class SplashViewModel @Inject constructor(
 
     fun login() {
         viewModelScope.launch(Dispatchers.IO) {
-            FlowApi(loginUseCase.loginFlow()).FlowBuilder()
+            FlowApi { loginUseCase.loginFlow() }.FlowBuilder()
                 .onHttpException { code ->
                     _toastMsg.postValue(code.toString())
                 }
