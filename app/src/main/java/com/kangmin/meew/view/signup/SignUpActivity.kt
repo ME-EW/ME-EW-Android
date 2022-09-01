@@ -1,6 +1,5 @@
 package com.kangmin.meew.view.signup
 
-import android.os.Bundle
 import androidx.activity.viewModels
 import com.kangmin.base.BaseActivity
 import com.kangmin.meew.R
@@ -12,10 +11,6 @@ import gun0912.tedkeyboardobserver.TedKeyboardObserver
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
 
     private val viewModel by viewModels<SignUpViewModel>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun setObserve() {
         super.setObserve()

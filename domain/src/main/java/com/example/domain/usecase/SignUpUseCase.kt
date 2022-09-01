@@ -46,7 +46,7 @@ class SignUpUseCase @Inject constructor(
         )
     }
 
-    fun getCharacters() = flow {
+    fun getCharactersFlow() = flow {
         kotlin.runCatching {
             characterRepository.getCharacters()
         }.onSuccess {

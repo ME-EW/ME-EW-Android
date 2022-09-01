@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseCharacter(
     @SerializedName("data")
-    val data: List<Data>,
+    val data: Data,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")
@@ -13,11 +13,24 @@ data class ResponseCharacter(
     val success: Boolean
 ) {
     data class Data(
+        @SerializedName("personalities")
+        val personalities: List<ResponseCharacterInfo>
+    )
+
+    data class ResponseCharacterInfo(
+        @SerializedName("id")
+        val id: Int,
+        @SerializedName("name")
+        val name: String,
+        @SerializedName("createdAt")
+        val createdDate: String,
+        @SerializedName("updatedAt")
+        val updatedDate: String,
         @SerializedName("description")
         val description: String,
-        @SerializedName("imageUrl")
-        val imageUrl: String,
-        @SerializedName("name")
-        val name: String
+        @SerializedName("mainImg")
+        val mainImg: String,
+        @SerializedName("imgUrl")
+        val images: List<String>
     )
 }

@@ -38,7 +38,8 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             FlowApi(loginUseCase.loginFlow()).FlowBuilder()
                 .onHttpException { code ->
-                    _toastMsg.postValue(code.toString())
+                    _toastMsg.postValue("http 에러")
+//                    _toastMsg.postValue(code.toString())
                 }
                 .onEtcException {
                     _toastMsg.postValue("서버 에러")

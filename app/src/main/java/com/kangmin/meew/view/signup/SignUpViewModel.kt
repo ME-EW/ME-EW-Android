@@ -3,11 +3,14 @@ package com.kangmin.meew.view.signup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
+import androidx.lifecycle.viewModelScope
 import com.example.domain.model.CharacterInfo
 import com.example.domain.usecase.SignUpUseCase
 import com.kangmin.base.BaseViewModel
+import com.kangmin.meew.util.FlowApi
 import com.kangmin.meew.util.ListLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -38,9 +41,20 @@ class SignUpViewModel @Inject constructor(
         return@map "${it.length}/10"
     }
 
-
     init {
-        _characters.value = signUpUseCase.getCharactersDummy().toMutableList()
+        getCharacters()
     }
 
+    private fun getCharacters() {
+        viewModelScope.launch {
+            FlowApi(signUpUseCase.getCharactersFlow()).FlowBuilder()
+                .onSuccess {
+                    _characters.postValue(it.toMutableList())
+                }.onHttpException {
+                    _toastMsg.postValue("캐릭터 목록을 불러오는데 실패했습니다.err:$it")
+                }.onEtcException {
+                    _toastMsg.postValue("서버 문제로 인해 캐릭터 목록을 불러오는데 실패했습니다.")
+                }.build()
+        }
+    }
 }

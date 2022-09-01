@@ -17,10 +17,10 @@ class CharacterRepositoryImpl @Inject constructor(
         val callbackResult = characterService.getCharacters()
         val result = mutableListOf<CharacterInfo>()
 
-        callbackResult.data.forEachIndexed { index, character ->
+        callbackResult.data.personalities.forEachIndexed { index, character ->
             result.add(
                 CharacterInfo(
-                    image = character.imageUrl,
+                    image = character.mainImg,
                     characterName = character.name,
                     characterInfo = character.description,
                     characterSelected = false,
