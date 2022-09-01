@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import retrofit2.HttpException
 
-class FlowApi<T>(private val flowItem: suspend () -> Flow<T>) {
+class FlowApi<T>(private val flowItem: Flow<T>) {
     private var httpException: (suspend (errCode: Int) -> Unit)? = null
     private var etcException: (suspend () -> Unit)? = null
     private var onSuccess: (suspend (T) -> Unit)? = null
@@ -28,14 +28,14 @@ class FlowApi<T>(private val flowItem: suspend () -> Flow<T>) {
         }
 
         suspend fun build() {
-            flowItem.invoke().catch {
+            flowItem.catch {
                 if (it is HttpException) {
-                    httpException?.let { exception -> exception(it.code()) }
+                    httpException?.invoke(it.code())
                 } else {
-                    etcException
+                    etcException?.invoke()
                 }
-            }.collectLatest {
-                onSuccess
+            }.collect {
+                onSuccess?.invoke(it)
             }
         }
     }

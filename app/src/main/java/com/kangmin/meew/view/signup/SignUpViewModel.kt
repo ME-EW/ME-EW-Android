@@ -49,19 +49,15 @@ class SignUpViewModel @Inject constructor(
 
     private fun getCharacters() {
         viewModelScope.launch {
-//            FlowApi{ signUpUseCase.getCharactersFlow() }
-//                .onSuccess {
-//                    Dlog.i("check characterList")
-//                    _characters.postValue(it.toMutableList())
-//                }.onHttpException {
-//                    _toastMsg.postValue("캐릭터 목록을 불러오는데 실패했습니다.err:$it")
-//                }.onEtcException {
-//                    _toastMsg.postValue("서버 문제로 인해 캐릭터 목록을 불러오는데 실패했습니다.")
-//                }.build()
-
-            signUpUseCase.getCharactersFlow().collectLatest {
-                _characters.postValue(it.toMutableList())
-            }
+            FlowApi (signUpUseCase.getCharactersFlow()).FlowBuilder()
+                .onSuccess {
+                    Dlog.i("check characterList")
+                    _characters.postValue(it.toMutableList())
+                }.onHttpException {
+                    _toastMsg.postValue("캐릭터 목록을 불러오는데 실패했습니다.err:$it")
+                }.onEtcException {
+                    _toastMsg.postValue("서버 문제로 인해 캐릭터 목록을 불러오는데 실패했습니다.")
+                }.build()
         }
     }
 }

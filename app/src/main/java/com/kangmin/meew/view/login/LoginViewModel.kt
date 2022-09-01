@@ -61,15 +61,15 @@ class LoginViewModel @Inject constructor(
 
     private fun callLogin() {
         _loginSuccessState.value = false
-        viewModelScope.launch {
-            FlowApi { loginUseCase.loginFlow(_kakaoToken) }.FlowBuilder()
-                .onSuccess {
-                    _loginSuccessState.value = it
-                }.onHttpException {
-                    _toastMsg.postValue("로그인에 실패했습니다.err:$it")
-                }.onEtcException {
-                    _toastMsg.postValue("로그인에 실패했습니다.")
-                }.build()
-        }
+//        viewModelScope.launch {
+//            FlowApi(loginUseCase.loginFlow(_kakaoToken)).FlowBuilder()
+//                .onSuccess {
+//                    _loginSuccessState.value = it
+//                }.onHttpException {
+//                    _toastMsg.postValue("로그인에 실패했습니다.err:$it")
+//                }.onEtcException {
+//                    _toastMsg.postValue("로그인에 실패했습니다.")
+//                }.build()
+//        }
     }
 }
