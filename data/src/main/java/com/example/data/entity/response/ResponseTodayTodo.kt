@@ -34,7 +34,7 @@ data class ResponseTodayTodo(
         val taskId: Int,
         @SerializedName("content")
         val content: String,
-        @SerializedName("Boolean")
+        @SerializedName("complete")
         val complete: Boolean
     )
 }
