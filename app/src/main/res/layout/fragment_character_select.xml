@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="40dp"
-            android:enabled="@{viewModel.selectedCharacterLiveData != null}"
+            android:enabled="false"
             android:onClick="@{()->fragment.moveNickNameStep()}"
             android:paddingVertical="16dp"
             android:text="이 캐릭터로 할래요"

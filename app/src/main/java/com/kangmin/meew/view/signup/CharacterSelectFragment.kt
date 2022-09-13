@@ -1,8 +1,9 @@
 package com.kangmin.meew.view.signup
 
-import android.os.Bundle
-import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.kangmin.base.BaseFragment
@@ -11,8 +12,11 @@ import com.kangmin.meew.databinding.FragmentCharacterSelectBinding
 import com.kangmin.meew.util.Dlog
 import com.kangmin.meew.util.dp
 import com.kangmin.meew.view.signup.adapter.CharacterViewPagerAdapter
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.layout.fragment_character_select) {
+class CharacterSelectFragment :
+    BaseFragment<FragmentCharacterSelectBinding>(R.layout.fragment_character_select) {
 
     private val viewModel by activityViewModels<SignUpViewModel>()
 
@@ -44,6 +48,7 @@ class CharacterSelectFragment : BaseFragment<FragmentCharacterSelectBinding>(R.l
 
         characterInfoAdapter.setItemListener { character ->
             viewModel.selectedCharacter = character
+            binding.btnNext.isEnabled = true
         }
 
         binding.viewpagerCharacter.run {

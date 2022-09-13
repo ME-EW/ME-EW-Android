@@ -28,7 +28,6 @@ class SignUpViewModel @Inject constructor(
 
     /** 선택한 캐릭터 정보 */
     private val _selectedCharacter = MutableLiveData<CharacterInfo>()
-    val selectedCharacterLiveData: LiveData<CharacterInfo> = _selectedCharacter
     var selectedCharacter: CharacterInfo? = null
         set(value) {
             value?.let {
